@@ -21,3 +21,148 @@
 2025-05-06 13:01:43 [ERROR]: ModelScope API调用失败: Request failed with status code 400
 2025-05-06 13:01:43 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
 2025-05-06 13:01:43 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 14:23:49 [ERROR]: 白天转夜景API调用失败: getaddrinfo ENOTFOUND api.liblib.ai
+2025-05-06 14:23:49 [ERROR]: 函数执行失败: 白天转夜景失败: getaddrinfo ENOTFOUND api.liblib.ai
+2025-05-06 14:52:51 [ERROR]: 白天转夜景API调用未返回预期数据:
+2025-05-06 14:52:51 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 14:52:51 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 14:55:33 [ERROR]: 白天转夜景API调用失败: formData.keys is not a function
+2025-05-06 14:55:33 [ERROR]: 错误堆栈: TypeError: formData.keys is not a function
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:131:48)
+    at executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:386:63)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:310:13)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-06 14:55:33 [ERROR]: 函数执行失败: 白天转夜景失败: formData.keys is not a function
+2025-05-06 14:58:25 [ERROR]: 白天转夜景API调用未返回预期数据结构。
+2025-05-06 14:58:25 [ERROR]: 响应代码: 200000
+2025-05-06 14:58:25 [ERROR]: 响应结构: {
+  "code": 200000,
+  "data": null,
+  "msg": "内部服务错误"
+}
+2025-05-06 14:58:25 [ERROR]: 白天转夜景API请求失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 14:58:25 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 14:58:25 [ERROR]: 错误堆栈: Error: 白天转夜景API调用未返回预期的图像数据
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:210:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:386:34)
+2025-05-06 14:58:25 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:07:51 [ERROR]: 白天转夜景API调用未返回预期数据结构。
+2025-05-06 15:07:51 [ERROR]: 响应代码: 200000
+2025-05-06 15:07:51 [ERROR]: 响应结构: {
+  "code": 200000,
+  "data": null,
+  "msg": "内部服务错误"
+}
+2025-05-06 15:07:51 [ERROR]: 白天转夜景API请求失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:07:51 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:07:51 [ERROR]: 错误堆栈: Error: 白天转夜景API调用未返回预期的图像数据
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:335:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:386:34)
+2025-05-06 15:07:51 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:09:40 [ERROR]: 白天转夜景API调用未返回预期数据结构。
+2025-05-06 15:09:40 [ERROR]: 响应代码: 200000
+2025-05-06 15:09:40 [ERROR]: 响应结构: {
+  "code": 200000,
+  "data": null,
+  "msg": "内部服务错误"
+}
+2025-05-06 15:09:40 [ERROR]: 白天转夜景API请求失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:09:40 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:09:40 [ERROR]: 错误堆栈: Error: 白天转夜景API调用未返回预期的图像数据
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:335:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:386:34)
+2025-05-06 15:09:40 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:27:00 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 115 (line 1 column 116)
+2025-05-06 15:27:00 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 115 (line 1 column 116)
+2025-05-06 15:27:00 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 115 (line 1 column 116)
+2025-05-06 15:37:53 [ERROR]: 白天转夜景API调用失败: formData.keys is not a function
+2025-05-06 15:37:53 [ERROR]: 错误堆栈: TypeError: formData.keys is not a function
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:131:48)
+    at executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:421:63)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:345:13)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-06 15:37:53 [ERROR]: 函数执行失败: 白天转夜景失败: formData.keys is not a function
+2025-05-06 15:40:45 [ERROR]: 白天转夜景API调用未返回预期数据结构。
+2025-05-06 15:40:45 [ERROR]: 响应代码: 401
+2025-05-06 15:40:45 [ERROR]: 响应结构: {
+  "code": 401,
+  "data": null,
+  "msg": "签名验证失败"
+}
+2025-05-06 15:40:45 [ERROR]: 白天转夜景API请求失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:40:45 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:40:45 [ERROR]: 错误堆栈: Error: 白天转夜景API调用未返回预期的图像数据
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:197:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:421:34)
+2025-05-06 15:40:45 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-06 15:49:42 [ERROR]: 白天转夜景API调用失败: Cannot access 'imageUrl' before initialization
+2025-05-06 15:49:42 [ERROR]: 错误堆栈: ReferenceError: Cannot access 'imageUrl' before initialization
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:99:40)
+    at executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:421:63)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:345:13)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-06 15:49:42 [ERROR]: 函数执行失败: 白天转夜景失败: Cannot access 'imageUrl' before initialization
+2025-05-06 16:09:36 [ERROR]: 白天转夜景API调用失败: Cannot access 'path' before initialization
+2025-05-06 16:09:36 [ERROR]: 错误堆栈: ReferenceError: Cannot access 'path' before initialization
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:132:89)
+    at executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:476:63)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:400:13)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-06 16:09:36 [ERROR]: 函数执行失败: 白天转夜景失败: Cannot access 'path' before initialization
+2025-05-06 16:12:50 [ERROR]: 白天转夜景API调用失败: 无效的图片URL: /，请提供有效的图片路径
+2025-05-06 16:12:50 [ERROR]: 错误堆栈: Error: 无效的图片URL: /，请提供有效的图片路径
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:103:13)
+    at executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:476:63)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:400:13)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-06 16:12:50 [ERROR]: 函数执行失败: 白天转夜景失败: 无效的图片URL: /，请提供有效的图片路径
+2025-05-06 16:26:52 [ERROR]: 无法修复JSON格式错误，原始参数: {"
+2025-05-06 16:26:52 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 2 (line 1 column 3)
+2025-05-06 16:26:52 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 2 (line 1 column 3)
+2025-05-06 16:26:52 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 2 (line 1 column 3)
+2025-05-06 16:36:56 [ERROR]: 白天转夜景API调用失败: Cannot access 'path' before initialization
+2025-05-06 16:36:56 [ERROR]: 错误堆栈: ReferenceError: Cannot access 'path' before initialization
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:111:9)
+    at executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:491:63)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:415:13)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-06 16:36:56 [ERROR]: 函数执行失败: 白天转夜景失败: Cannot access 'path' before initialization
+2025-05-06 16:42:39 [ERROR]: 无法修复JSON格式错误且无法提供默认参数，原始参数: {"questions": "
+2025-05-06 16:42:39 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 15 (line 1 column 16)
+2025-05-06 16:42:39 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 15 (line 1 column 16)
+2025-05-06 16:42:39 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 15 (line 1 column 16)
+2025-05-06 16:48:41 [ERROR]: 上传图片到TheCatAPI失败: ENOENT: no such file or directory, open '/uploads/1746521305375-421711321-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png'
+2025-05-06 16:48:41 [ERROR]: 继续使用原始图片路径: /uploads/1746521305375-421711321-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 16:48:56 [ERROR]: 上传图片到TheCatAPI失败: Request failed with status code 400
+2025-05-06 16:48:56 [ERROR]: 图床错误状态码: 400
+2025-05-06 16:48:56 [ERROR]: 图床错误数据: "Classifcation failed: correct animal not found."
+2025-05-06 16:48:56 [ERROR]: 图床错误头部: {"content-type":"text/plain; charset=utf-8","x-cloud-trace-context":"41652670791aab17e5f3d1536ae7d025","date":"Tue, 06 May 2025 08:48:56 GMT","server":"Google Frontend","content-length":"47"}
+2025-05-06 16:48:56 [ERROR]: 白天转夜景API调用失败: 图床上传失败: Request failed with status code 400
+2025-05-06 16:48:56 [ERROR]: 错误堆栈: Error: 图床上传失败: Request failed with status code 400
+    at Object.dayToNight (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/imageGenerationService.js:190:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeFunction (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:542:34)
+2025-05-06 16:48:56 [ERROR]: 函数执行失败: 白天转夜景失败: 图床上传失败: Request failed with status code 400
+2025-05-06 16:53:14 [ERROR]: Error: 只允许上传图片文件!
+2025-05-06 16:54:10 [ERROR]: 上传图片到TheCatAPI失败: ENOENT: no such file or directory, open '/uploads/1746521618632-542540608-173978651173780_480_320.jpg'
+2025-05-06 16:54:10 [ERROR]: 继续使用原始图片路径: /uploads/1746521618632-542540608-173978651173780_480_320.jpg
+2025-05-06 16:54:15 [ERROR]: 无法修复JSON格式错误且无法提供默认参数，原始参数: {"questions": "
+2025-05-06 16:54:15 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 15 (line 1 column 16)
+2025-05-06 16:54:15 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 15 (line 1 column 16)
+2025-05-06 16:54:15 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 15 (line 1 column 16)
