@@ -1,0 +1,28 @@
+/* 聊天界面样式 */
+.chat-interface {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.messages-container {
+  max-height: 500px;
+  min-height: 300px;
+  overflow-y: auto;
+  padding: 10px 0;
+  margin-bottom: 16px;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .messages-container {
+    max-height: 400px;
+    min-height: 200px;
+  }
+}

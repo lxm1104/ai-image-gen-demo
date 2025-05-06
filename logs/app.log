@@ -1,0 +1,109 @@
+2025-05-06 11:36:52 [INFO]: 服务器运行在端口 5001
+2025-05-06 11:44:28 [INFO]: 图片上传成功: 1746503068990-390941659-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 11:44:34 [INFO]: 收到聊天请求: 将图片转为夜景
+2025-05-06 11:44:34 [INFO]: 向语言模型发送消息，消息长度: 7
+2025-05-06 11:44:34 [INFO]: 检测到白天转夜景请求，准备调用相关API
+2025-05-06 11:44:34 [INFO]: 开始调用白天转夜景API，图像URL: /uploads/1746503068990-390941659-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 11:44:34 [INFO]: 图像路径: /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/1746503068990-390941659-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 11:44:34 [INFO]: 白天转夜景API调用成功，处理返回结果
+2025-05-06 11:44:34 [INFO]: 白天转夜景完成，图像URL: /uploads/night_1746503074919.png
+2025-05-06 11:44:34 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-06 11:44:34 [INFO]: 语言模型响应成功
+2025-05-06 11:49:03 [INFO]: 服务器运行在端口 5001
+2025-05-06 11:51:38 [INFO]: 服务器运行在端口 5001
+2025-05-06 11:53:44 [INFO]: 服务器运行在端口 5001
+2025-05-06 11:54:39 [INFO]: 服务器运行在端口 5001
+2025-05-06 11:56:07 [INFO]: 服务器运行在端口 5001
+2025-05-06 11:56:26 [INFO]: 服务器运行在端口 5001
+2025-05-06 12:00:12 [INFO]: 服务器运行在端口 5001
+2025-05-06 12:05:15 [INFO]: 图片上传成功: 1746504315693-557010759-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 12:05:20 [INFO]: 收到聊天请求: 转为夜景
+2025-05-06 12:05:20 [INFO]: 处理用户消息，消息长度: 4
+2025-05-06 12:05:20 [INFO]: 调用ModelScope API，提示文本长度: 4
+2025-05-06 12:05:20 [INFO]: 发送ModelScope API请求:
+2025-05-06 12:05:21 [ERROR]: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:05:21 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:05:21 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:49:15 [INFO]: 服务器运行在端口 5001
+2025-05-06 12:51:36 [INFO]: 图片上传成功: 1746507096437-611199355-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 12:51:39 [INFO]: 收到聊天请求: 变成黑夜
+2025-05-06 12:51:39 [INFO]: 处理用户消息，消息长度: 4
+2025-05-06 12:51:39 [INFO]: 调用ModelScope API，提示文本长度: 4
+2025-05-06 12:51:39 [INFO]: 发送ModelScope API请求:
+2025-05-06 12:51:40 [ERROR]: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:51:40 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:51:40 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:58:04 [INFO]: 服务器运行在端口 5001
+2025-05-06 12:58:26 [INFO]: 服务器运行在端口 5001
+2025-05-06 12:58:43 [INFO]: 图片上传成功: 1746507523642-267844591-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 12:58:52 [INFO]: 收到聊天请求: 改为黑夜
+2025-05-06 12:58:52 [INFO]: 处理用户消息，消息长度: 4
+2025-05-06 12:58:52 [INFO]: 调用ModelScope API，提示文本长度: 4
+2025-05-06 12:58:52 [INFO]: 发送ModelScope API请求:
+2025-05-06 12:58:52 [ERROR]: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 12:58:52 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 12:58:52 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:00:36 [INFO]: 服务器运行在端口 5001
+2025-05-06 13:00:50 [INFO]: 服务器运行在端口 5001
+2025-05-06 13:01:09 [INFO]: 图片上传成功: 1746507669161-36907859-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-06 13:01:13 [INFO]: 收到聊天请求: 改成黑夜
+2025-05-06 13:01:13 [INFO]: 处理用户消息，消息长度: 4
+2025-05-06 13:01:13 [INFO]: 调用ModelScope API，提示文本长度: 4
+2025-05-06 13:01:13 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-06 13:01:13 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-06 13:01:13 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-06 13:01:13 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"你是一个智能助手，可以做以下事情:\n1. 根据用户描述生成图片\n2. 将白天图片转换为夜景\n\n当用户要求生成图片时，请分析用户意图并返回您的回复和行动指令。\n如果用户要求生成图片，请在响应中包含 action: \"generate_image\" 并在 prompt 中提供详细的图像描述。\n如果用户要求转换夜景，请在响应中包含 action: \"day_to_night\"。"},{"role":"user","content":"改成黑夜\n\n[用户上传了一张图片，图片URL: /uploads/1746507669161-36907859-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png]"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"extra_body":{"enable_thinking":true}}
+2025-05-06 13:01:13 [INFO]: 开始发送API请求...
+2025-05-06 13:01:13 [ERROR]: API请求失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: 响应状态码: 400
+2025-05-06 13:01:13 [ERROR]: 响应头: {"date":"Tue, 06 May 2025 05:01:13 GMT","content-type":"application/json","content-length":"246","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217465076735184561e853c8f80b26838fef5b757a8d7238e354e9b;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-06 13:01:13 [ERROR]: 响应数据: {"error":{"code":"invalid_parameter_error","message":"This model only support stream mode, please enable the stream parameter to access the model. ","param":null,"type":"invalid_request_error"},"request_id":"1b650205-b827-4c63-971d-2b4f443bab23"}
+2025-05-06 13:01:13 [ERROR]: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:43 [INFO]: 收到聊天请求: 生成一张好看的图
+2025-05-06 13:01:43 [INFO]: 处理用户消息，消息长度: 8
+2025-05-06 13:01:43 [INFO]: 调用ModelScope API，提示文本长度: 8
+2025-05-06 13:01:43 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-06 13:01:43 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-06 13:01:43 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-06 13:01:43 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"你是一个智能助手，可以做以下事情:\n1. 根据用户描述生成图片\n2. 将白天图片转换为夜景\n\n当用户要求生成图片时，请分析用户意图并返回您的回复和行动指令。\n如果用户要求生成图片，请在响应中包含 action: \"generate_image\" 并在 prompt 中提供详细的图像描述。\n如果用户要求转换夜景，请在响应中包含 action: \"day_to_night\"。"},{"role":"user","content":"生成一张好看的图"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"extra_body":{"enable_thinking":true}}
+2025-05-06 13:01:43 [INFO]: 开始发送API请求...
+2025-05-06 13:01:43 [ERROR]: API请求失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: 响应状态码: 400
+2025-05-06 13:01:43 [ERROR]: 响应头: {"date":"Tue, 06 May 2025 05:01:43 GMT","content-type":"application/json","content-length":"246","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217465077036348816e853f52ddb14b8d88c4c45dac3e26bc2974b8;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-06 13:01:43 [ERROR]: 响应数据: {"error":{"code":"invalid_parameter_error","message":"This model only support stream mode, please enable the stream parameter to access the model. ","param":null,"type":"invalid_request_error"},"request_id":"bd767664-4ada-4197-8395-2d4b181515f9"}
+2025-05-06 13:01:43 [ERROR]: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:03:00 [INFO]: 服务器运行在端口 5001
+2025-05-06 13:03:30 [INFO]: 服务器运行在端口 5001
+2025-05-06 13:03:56 [INFO]: 收到聊天请求: 生成一张好看的图
+2025-05-06 13:03:56 [INFO]: 处理用户消息，消息长度: 8
+2025-05-06 13:03:56 [INFO]: 调用ModelScope API，提示文本长度: 8
+2025-05-06 13:03:56 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-06 13:03:56 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-06 13:03:56 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-06 13:03:56 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"你是一个智能助手，可以做以下事情:\n1. 根据用户描述生成图片\n2. 将白天图片转换为夜景\n\n当用户要求生成图片时，请分析用户意图并返回您的回复和行动指令。\n如果用户要求生成图片，请在响应中包含 action: \"generate_image\" 并在 prompt 中提供详细的图像描述。\n如果用户要求转换夜景，请在响应中包含 action: \"day_to_night\"。"},{"role":"user","content":"生成一张好看的图"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true}}
+2025-05-06 13:03:56 [INFO]: 开始发送API请求...
+2025-05-06 13:03:57 [INFO]: ModelScope API流式调用成功
+2025-05-06 13:03:57 [INFO]: 响应状态码: 200
+2025-05-06 13:03:57 [INFO]: 响应头: {"date":"Tue, 06 May 2025 05:03:57 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217465078371221177e85314714f702d5ceb143f1a8afa015e81593;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-06 13:04:07 [INFO]: 流式响应结束，获得完整内容长度: 478
+2025-05-06 13:04:07 [INFO]: 完整响应内容(前100字符): 好的，我将为您生成一张美丽的自然风景图。画面中将包含宁静的湖泊、雄伟的雪山、翠绿的森林和绚丽的野花，搭配温暖的阳光和清澈的倒影，呈现出令人放松的治愈系场景。
+
+action: generate_ima...
+2025-05-06 13:04:07 [INFO]: 解析响应数据...
+2025-05-06 13:04:07 [INFO]: 找到choices数组，长度: 1
+2025-05-06 13:04:07 [INFO]: 成功提取响应文本，长度: 478
+2025-05-06 13:04:07 [INFO]: 语言模型响应文本: 好的，我将为您生成一张美丽的自然风景图。画面中将包含宁静的湖泊、雄伟的雪山、翠绿的森林和绚丽的野花，搭配温暖的阳光和清澈的倒影，呈现出令人放松的治愈系场景。
+
+action: generate_image
+prompt: A serene alpine lake surrounded by towering snow-capped mountains, crystal clear water reflecting the blue sky and white clouds, lush green meadows with colorful wildflowers along the shoreline, tall pine trees framing the scene, soft golden sunlight creating gentle ripples on the water surface, hyper-realistic 4K resolution with vivid colors and intricate details.
+2025-05-06 13:04:07 [INFO]: 从响应中提取行动和提示...
+2025-05-06 13:04:07 [INFO]: 提取的行动: , 提取的提示: A serene alpine lake surrounded by towering snow-capped mountains, crystal clear water reflecting the blue sky and white clouds, lush green meadows with colorful wildflowers along the shoreline, tall pine trees framing the scene, soft golden sunlight creating gentle ripples on the water surface, hyper-realistic 4K resolution with vivid colors and intricate details.
+2025-05-06 13:04:07 [INFO]: 处理后的响应文本: 好的，我将为您生成一张美丽的自然风景图。画面中将包含宁静的湖泊、雄伟的雪山、翠绿的森林和绚丽的野花，搭配温暖的阳光和清澈的倒影，呈现出令人放松的治愈系场景。
+
+action: generate_image
+2025-05-06 13:04:07 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-06 13:04:07 [INFO]: 语言模型响应成功

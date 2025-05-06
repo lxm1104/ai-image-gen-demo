@@ -1,0 +1,23 @@
+2025-05-06 12:05:21 [ERROR]: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:05:21 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:05:21 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:51:40 [ERROR]: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:51:40 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:51:40 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 401
+2025-05-06 12:58:52 [ERROR]: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 12:58:52 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 12:58:52 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: API请求失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: 响应状态码: 400
+2025-05-06 13:01:13 [ERROR]: 响应头: {"date":"Tue, 06 May 2025 05:01:13 GMT","content-type":"application/json","content-length":"246","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217465076735184561e853c8f80b26838fef5b757a8d7238e354e9b;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-06 13:01:13 [ERROR]: 响应数据: {"error":{"code":"invalid_parameter_error","message":"This model only support stream mode, please enable the stream parameter to access the model. ","param":null,"type":"invalid_request_error"},"request_id":"1b650205-b827-4c63-971d-2b4f443bab23"}
+2025-05-06 13:01:13 [ERROR]: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:13 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: API请求失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: 响应状态码: 400
+2025-05-06 13:01:43 [ERROR]: 响应头: {"date":"Tue, 06 May 2025 05:01:43 GMT","content-type":"application/json","content-length":"246","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217465077036348816e853f52ddb14b8d88c4c45dac3e26bc2974b8;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-06 13:01:43 [ERROR]: 响应数据: {"error":{"code":"invalid_parameter_error","message":"This model only support stream mode, please enable the stream parameter to access the model. ","param":null,"type":"invalid_request_error"},"request_id":"bd767664-4ada-4197-8395-2d4b181515f9"}
+2025-05-06 13:01:43 [ERROR]: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
+2025-05-06 13:01:43 [ERROR]: 处理聊天请求失败: 语言模型处理失败: ModelScope API调用失败: Request failed with status code 400
