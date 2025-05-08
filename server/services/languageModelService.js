@@ -453,9 +453,18 @@ async function sendMessage(message, imageUrl = null, sessionId = null) {
         // Step 2: Log the initial model response
         logger.info(`[DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: ${JSON.stringify(modelResponse, null, 2)}`);
 
+        // NEW: Handle pre-processed successful image generation directly from callModelScopeAPI's typical successful image response structure
+        if (modelResponse && modelResponse.success === true && modelResponse.functionName === 'generate_image' && modelResponse.result && modelResponse.result.imageUrl) {
+            logger.info('[DEBUG sendMessage] Detected pre-processed successful image generation from callModelScopeAPI structure.');
+            generatedImageUrl = modelResponse.result.imageUrl;
+            responseText = ''; // User requirement: only image, no extra text
+            isQuestion = false;
+            hasSentToolCallResponse = true; // Mark as handled so later blocks are skipped or act accordingly
+        }
+
         // Step 3: Process tool calls if present
         const toolCalls = modelResponse?.output?.tool_calls;
-        if (toolCalls && toolCalls.length > 0) {
+        if (!hasSentToolCallResponse && toolCalls && toolCalls.length > 0) { // Added !hasSentToolCallResponse condition
             logger.info(`发现 ${toolCalls.length} 个工具调用。`);
             for (const toolCall of toolCalls) {
                 logger.info(`处理工具调用: ${JSON.stringify(toolCall)}`);
@@ -532,12 +541,13 @@ async function sendMessage(message, imageUrl = null, sessionId = null) {
         if (!hasSentToolCallResponse) {
             logger.info(`[DEBUG sendMessage] Entered 'if (!hasSentToolCallResponse)' block. Current responseText before this block: '${responseText}'`);
             // Check if modelResponse itself has a direct message to show, e.g. if no tool_calls were made or intended
+            // AND if the new block above didn't already set responseText to empty for an image
             if (modelResponse && modelResponse.output && modelResponse.output.choices && modelResponse.output.choices.length > 0 && modelResponse.output.choices[0].message && modelResponse.output.choices[0].message.content) {
                 // This is the direct text response from the LLM, not a tool call.
                 responseText = modelResponse.output.choices[0].message.content.trim();
                 isQuestion = false; // Typically, direct LLM responses are not questions unless specifically formatted.
                 logger.info(`No tool response was sent, using direct LLM response: "${responseText}"`);
-            } else if (modelResponse && typeof modelResponse.message === 'string' && !responseText) {
+            } else if (modelResponse && typeof modelResponse.message === 'string' && !responseText) { // Ensure we don't overwrite an empty responseText meant for an image
                 // This handles cases where handleStreamResponse might directly populate a simple message (e.g., from an error or a non-tool-calling stream)
                 // And ensure we don't overwrite a responseText already set by a failed tool attempt above.
                 responseText = modelResponse.message;

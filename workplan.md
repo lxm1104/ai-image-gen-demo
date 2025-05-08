@@ -59,21 +59,26 @@
 
 ### 任务：修复图片生成API问题
 
-#### 当前子任务：调查并修复 `handleStreamResponse` 的 `ReferenceError`
+#### 当前子任务：修复响应文本问题
 
-**步骤：**
-1.  检查 `logs/app.log` 中关于 `handleStreamResponse` 的错误记录。
-2.  定位 `handleStreamResponse` 的调用位置和预期定义位置。
-3.  根据调查结果修复错误。
-4.  测试图片生成功能，确保问题已解决。
+**目标：** 确保当图片成功生成时，API响应只包含图片信息（URL），不附带额外的文字说明。
 
-**已完成：**
-- 更新了 `imageGenerationService.js` 中的 `textToImage` 函数，以符合 LiblibAI API 的要求。
-- 修复了参数和JSON解析相关的一些问题。
+**已完成步骤：**
+1.  **调查问题根源：**
+    *   分析日志，确认问题发生在 `sendMessage` 函数未能正确处理 `callModelScopeAPI` 直接返回的已处理工具调用结果。
+    *   确认 `modelResponse` 直接包含图片生成结果和多余的文本信息，导致跳过了设置 `responseText = ''` 的逻辑。
+2.  **修改 `server/services/languageModelService.js`：**
+    *   在 `sendMessage` 函数中，于 `callModelScopeAPI` 调用之后，增加了一个新的逻辑块。
+    *   该逻辑块检测 `modelResponse` 是否为直接的、成功的图片生成结果。
+    *   如果是，则直接设置 `generatedImageUrl`，将 `responseText` 置为空字符串，并将 `hasSentToolCallResponse` 标记为 `true`。
+    *   修改了后续 `toolCalls` 处理循环的条件，确保在上述直接处理已发生时跳过此循环。
+    *   调整了后续回退逻辑中对 `modelResponse.message` 的使用，避免覆盖已设置为空的 `responseText`。
 
-**待办：**
-- [x] ~~**新任务 (高优先级):** 修改图片生成逻辑，使得当图片成功生成时，API响应只包含图片信息，不附带额外文字说明~~.
-- [x] ~~调查并修复 `handleStreamResponse` 的 `ReferenceError`~~ (Investigation complete: Function not found in active code, error likely outdated).
-- [x] ~~检查并确保 `logger` 配置正确，以便 `logs/app.log` 能正常生成和写入~~ (Configuration in `server/config/logger.js` verified; actual file creation to be confirmed on server run).
-- [x] ~~更新 `docs/technical_design.md`~~.
-- [ ] 全面测试图片生成功能 (包括验证 `logs/app.log` 的生成和内容，并确认新修改的响应行为)。
+**下一步计划：**
+1.  **测试验证：**
+    *   重启服务器。
+    *   通过前端或API调用工具（如Postman）测试图片生成功能。
+    *   验证当图片成功生成时，前端收到的响应中 `text` 字段是否为空或不包含 "已根据您的描述生成图片..." 等文字。
+    *   检查 `logs/app.log` 和控制台日志，确认新的逻辑按预期执行，特别是 `[DEBUG sendMessage] Detected pre-processed successful image generation...` 日志是否出现。
+2.  **更新技术文档：**
+    *   在 `docs/technical_design.md` 中记录对 `languageModelService.js` 中 `sendMessage` 函数所做的修改及其原因。

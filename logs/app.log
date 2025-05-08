@@ -1,0 +1,95 @@
+2025-05-08 15:35:32 [INFO]: 服务器运行在端口 5001
+2025-05-08 15:36:51 [INFO]: 服务器运行在端口 5001
+2025-05-08 15:39:50 [INFO]: 收到聊天请求: 一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格
+
+2025-05-08 15:39:50 [INFO]: 处理用户消息，消息长度: 41
+2025-05-08 15:39:50 [INFO]: 调用ModelScope API，提示文本长度: 41
+2025-05-08 15:39:50 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-08 15:39:50 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-08 15:39:50 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-08 15:39:50 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格\n"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-08 15:39:50 [INFO]: 开始发送API请求...
+2025-05-08 15:39:50 [INFO]: ModelScope API流式调用成功
+2025-05-08 15:39:50 [INFO]: 响应状态码: 200
+2025-05-08 15:39:50 [INFO]: 响应头: {"date":"Thu, 08 May 2025 07:39:51 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0b62601e17466899905386143e365cfd9a94a3450a6d447086cad2f26cc290;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-08 15:39:55 [INFO]: 收到完成标记，流式响应完成
+2025-05-08 15:39:55 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-08 15:39:55 [INFO]: 处理工具调用: {"index":0,"id":"call_9e28d83a19ed4b589c220d","type":"function","function":{"name":"generate_image","arguments":"{\"prompt\": \"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格\"}"}}
+2025-05-08 15:39:55 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"prompt": "一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"}" (长度: 54)
+2025-05-08 15:39:55 [INFO]: 成功解析工具调用参数: {"prompt":"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"}
+2025-05-08 15:39:55 [INFO]: 执行函数调用: generate_image, 参数: {"prompt":"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"}
+2025-05-08 15:39:55 [INFO]: 调用文生图函数，提示: 一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格
+2025-05-08 15:39:55 [INFO]: 开始调用文生图API，提示: "一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"
+2025-05-08 15:39:55 [INFO]: 根据LiblibAI API文档更新了生成参数结构
+2025-05-08 15:39:55 [INFO]: 发送文生图API请求，请求参数:
+2025-05-08 15:39:55 [INFO]: 签名原文: /api/generate/webui/text2img/ultra&1746689995618&2aqfooqv8ku
+2025-05-08 15:39:55 [INFO]: 签名base64原始结果: qxIZmOWWQ8qIeI0KpXKF+Cvh/Jo=
+2025-05-08 15:39:55 [INFO]: URL安全的签名结果: qxIZmOWWQ8qIeI0KpXKF-Cvh_Jo
+2025-05-08 15:39:55 [INFO]: 完整请求URL: https://openapi.liblibai.cloud/api/generate/webui/text2img/ultra?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=qxIZmOWWQ8qIeI0KpXKF-Cvh_Jo&Timestamp=1746689995618&SignatureNonce=2aqfooqv8ku
+2025-05-08 15:39:55 [INFO]: AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-08 15:39:55 [INFO]: Timestamp: 1746689995618
+2025-05-08 15:39:55 [INFO]: SignatureNonce: 2aqfooqv8ku
+2025-05-08 15:39:55 [INFO]: Signature: qxIZmOWWQ8qIeI0KpXKF-Cvh_Jo
+2025-05-08 15:39:57 [INFO]: 文生图API调用成功，处理返回结果
+2025-05-08 15:39:57 [INFO]: API响应状态码: 200
+2025-05-08 15:39:57 [INFO]: API响应头: {"content-type":"application/json","date":"Thu, 08 May 2025 07:39:57 GMT","req-cost-time":"1815","req-arrive-time":"1746689996053","resp-start-time":"1746689997868","x-envoy-upstream-service-time":"1814","set-cookie":["acw_tc=9c05aef4-5867-4e42-b1fc-2aa3b2320763d4c080ed1119a5d1aec91eb2b4c04a6c;path=/;HttpOnly;Max-Age=1800"],"server":"istio-envoy","transfer-encoding":"chunked"}
+2025-05-08 15:39:57 [INFO]: API响应内容: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c"},"msg":""}
+2025-05-08 15:39:57 [INFO]: 文生图任务已创建，任务ID: 29c516ee4d9548789c641eb2deaa6d9c，等待生成完成...
+2025-05-08 15:39:57 [INFO]: 签名原文: /api/generate/webui/status&1746689997700&1nsx4ytmpab
+2025-05-08 15:39:57 [INFO]: 签名base64原始结果: CVv7EnCKUdMyxCIUTJlMXXN1cNE=
+2025-05-08 15:39:57 [INFO]: URL安全的签名结果: CVv7EnCKUdMyxCIUTJlMXXN1cNE
+2025-05-08 15:39:57 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=CVv7EnCKUdMyxCIUTJlMXXN1cNE&Timestamp=1746689997700&SignatureNonce=1nsx4ytmpab
+2025-05-08 15:39:57 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-08 15:39:57 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
+2025-05-08 15:39:57 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":2,"percentCompleted":0.5,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
+2025-05-08 15:39:57 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 2，进度: 0.5
+2025-05-08 15:39:57 [INFO]: 图像数量: 0
+2025-05-08 15:39:57 [INFO]: 图像详情: []
+2025-05-08 15:40:00 [INFO]: 签名原文: /api/generate/webui/status&1746690000807&dsaxk0qy8e4
+2025-05-08 15:40:00 [INFO]: 签名base64原始结果: jEmKOAyjvphOC2hxQdiw9hYFI/A=
+2025-05-08 15:40:00 [INFO]: URL安全的签名结果: jEmKOAyjvphOC2hxQdiw9hYFI_A
+2025-05-08 15:40:00 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=jEmKOAyjvphOC2hxQdiw9hYFI_A&Timestamp=1746690000807&SignatureNonce=dsaxk0qy8e4
+2025-05-08 15:40:00 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-08 15:40:00 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
+2025-05-08 15:40:00 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":2,"percentCompleted":0.33,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
+2025-05-08 15:40:00 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 2，进度: 0.33
+2025-05-08 15:40:00 [INFO]: 图像数量: 0
+2025-05-08 15:40:00 [INFO]: 图像详情: []
+2025-05-08 15:40:03 [INFO]: 签名原文: /api/generate/webui/status&1746690003892&04yxqwxlsk0p
+2025-05-08 15:40:03 [INFO]: 签名base64原始结果: vvljvBh69YgFWTwxQLNq9QsgC0U=
+2025-05-08 15:40:03 [INFO]: URL安全的签名结果: vvljvBh69YgFWTwxQLNq9QsgC0U
+2025-05-08 15:40:03 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=vvljvBh69YgFWTwxQLNq9QsgC0U&Timestamp=1746690003892&SignatureNonce=04yxqwxlsk0p
+2025-05-08 15:40:03 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-08 15:40:03 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
+2025-05-08 15:40:03 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":2,"percentCompleted":0.67,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
+2025-05-08 15:40:03 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 2，进度: 0.67
+2025-05-08 15:40:03 [INFO]: 图像数量: 0
+2025-05-08 15:40:03 [INFO]: 图像详情: []
+2025-05-08 15:40:06 [INFO]: 签名原文: /api/generate/webui/status&1746690006979&h7r2j0lrcdh
+2025-05-08 15:40:06 [INFO]: 签名base64原始结果: OoJoURE16d4yOAD/DA73iQXyNmY=
+2025-05-08 15:40:06 [INFO]: URL安全的签名结果: OoJoURE16d4yOAD_DA73iQXyNmY
+2025-05-08 15:40:06 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=OoJoURE16d4yOAD_DA73iQXyNmY&Timestamp=1746690006979&SignatureNonce=h7r2j0lrcdh
+2025-05-08 15:40:06 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-08 15:40:06 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
+2025-05-08 15:40:07 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":5,"percentCompleted":1,"generateMsg":null,"pointsCost":15,"accountBalance":395,"images":[{"imageUrl":"https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png","seed":7398462704,"auditStatus":3}]},"msg":""}
+2025-05-08 15:40:07 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 5，进度: 1
+2025-05-08 15:40:07 [INFO]: 图像数量: 1
+2025-05-08 15:40:07 [INFO]: 图像详情: [{"imageUrl":"https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png","seed":7398462704,"auditStatus":3}]
+2025-05-08 15:40:07 [INFO]: 获取到文生图生成的图像URL: https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png
+2025-05-08 15:40:07 [INFO]: 开始下载图像: https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png 到 /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/generated_1746690007027.png
+2025-05-08 15:40:07 [INFO]: 图像下载完成: /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/generated_1746690007027.png
+2025-05-08 15:40:07 [INFO]: 文生图完成，图像已保存到本地，URL: /uploads/generated_1746690007027.png
+2025-05-08 15:40:07 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
+  "success": true,
+  "functionName": "generate_image",
+  "result": {
+    "imageUrl": "/uploads/generated_1746690007027.png",
+    "originalUrl": "https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png",
+    "prompt": "一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格",
+    "modelType": "star3"
+  },
+  "message": "已根据您的描述生成图片。您可以查看生成的图片。"
+}
+2025-05-08 15:40:07 [INFO]: [DEBUG sendMessage] Detected pre-processed successful image generation from callModelScopeAPI structure.
+2025-05-08 15:40:07 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-08 15:40:07 [INFO]: 语言模型响应成功

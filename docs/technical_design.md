@@ -67,6 +67,11 @@
 
 #### 服务层
 - `languageModelService`：调用语言模型API（如ModelScope）。
+  - `callModelScopeAPI`: 负责与 ModelScope API 进行底层通信，包括处理流式响应。
+  - `sendMessage`: 核心业务逻辑函数，负责编排与语言模型的交互。
+      - **工具调用处理**: 识别并执行模型返回的工具调用请求（如图像生成、提问用户等）。
+      - **直接图像生成响应处理**: 新增逻辑以应对 `callModelScopeAPI` 可能直接返回已成功处理的图片生成结果的情况。在这种场景下，`sendMessage` 会确保从 `modelResponse` 中提取图片URL，并将最终返回给前端的文本响应设置为空字符串，以满足用户仅展示图片的需求。
+      - **响应聚合**: 整合来自模型直接回复或工具调用结果的文本和图片URL，形成最终响应。
   - **Stream Handling**: Handles streaming responses from the language model internally (within `callModelScopeAPI` using a `chunkHandler`). The previously considered `handleStreamResponse` function is obsolete.
 - `imageGenerationService`：调用图像生成模型API
 - `sessionService`：管理用户会话
