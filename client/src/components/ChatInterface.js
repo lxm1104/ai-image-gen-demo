@@ -89,6 +89,7 @@ const ChatInterface = ({ sessionId }) => {
           type: 'assistant',
           content: response.data.response.text,
           imageUrl: response.data.response.imageUrl,
+          isQuestion: response.data.response.isQuestion, // 传递是否是提问消息的标志
           timestamp: new Date()
         };
         

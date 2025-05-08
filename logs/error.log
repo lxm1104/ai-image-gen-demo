@@ -166,3 +166,104 @@
 2025-05-06 16:54:15 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 15 (line 1 column 16)
 2025-05-06 16:54:15 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 15 (line 1 column 16)
 2025-05-06 16:54:15 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 15 (line 1 column 16)
+2025-05-06 17:11:00 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 98 (line 1 column 99)
+2025-05-06 17:11:00 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 98 (line 1 column 99)
+2025-05-06 17:11:00 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 98 (line 1 column 99)
+2025-05-06 17:19:17 [ERROR]: 语言模型处理失败: functionResult is not defined
+2025-05-06 17:19:17 [ERROR]: 处理聊天请求失败: 语言模型处理失败: functionResult is not defined
+2025-05-06 17:22:27 [ERROR]: 语言模型处理失败: lastFunctionResult is not defined
+2025-05-06 17:22:27 [ERROR]: 处理聊天请求失败: 语言模型处理失败: lastFunctionResult is not defined
+2025-05-06 17:35:00 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 54 (line 1 column 55)
+2025-05-06 17:35:00 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 54 (line 1 column 55)
+2025-05-06 17:35:00 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 54 (line 1 column 55)
+2025-05-06 22:49:22 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 60 (line 1 column 61)
+2025-05-06 22:49:22 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 60 (line 1 column 61)
+2025-05-06 22:49:22 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 60 (line 1 column 61)
+2025-05-06 22:53:17 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 69 (line 1 column 70)
+2025-05-06 22:53:17 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 69 (line 1 column 70)
+2025-05-06 22:53:17 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 69 (line 1 column 70)
+2025-05-06 22:54:50 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 75 (line 1 column 76)
+2025-05-06 22:54:50 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 75 (line 1 column 76)
+2025-05-06 22:54:50 [ERROR]: 语言模型处理时捕获到错误: 语言模型处理失败: Unterminated string in JSON at position 75 (line 1 column 76)
+2025-05-06 22:56:24 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 23 (line 1 column 24)
+2025-05-06 22:56:24 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 23 (line 1 column 24)
+2025-05-06 22:56:24 [ERROR]: 语言模型处理时捕获到错误: 语言模型处理失败: Unterminated string in JSON at position 23 (line 1 column 24)
+2025-05-06 23:02:19 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 75 (line 1 column 76)
+2025-05-06 23:02:19 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 75 (line 1 column 76)
+2025-05-06 23:02:19 [ERROR]: 语言模型处理时捕获到错误: 语言模型处理失败: Unterminated string in JSON at position 75 (line 1 column 76)
+2025-05-06 23:21:09 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 96 (line 1 column 97)
+2025-05-06 23:21:09 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 96 (line 1 column 97)
+2025-05-06 23:21:09 [ERROR]: 语言模型处理时捕获到错误: 语言模型处理失败: Unterminated string in JSON at position 96 (line 1 column 97)
+2025-05-06 23:25:20 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 85 (line 1 column 86)
+2025-05-06 23:25:20 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 85 (line 1 column 86)
+2025-05-06 23:25:20 [ERROR]: 语言模型处理时捕获到错误: 语言模型处理失败: Unterminated string in JSON at position 85 (line 1 column 86)
+2025-05-07 08:16:51 [ERROR]: 解析工具调用参数失败: Unterminated string in JSON at position 63 (line 1 column 64)
+2025-05-07 08:16:51 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 63 (line 1 column 64)
+2025-05-07 08:16:51 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 63 (line 1 column 64)
+2025-05-07 08:23:02 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 68 (line 1 column 69)
+2025-05-07 08:23:02 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 68 (line 1 column 69)
+2025-05-07 08:23:02 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 68 (line 1 column 69)
+2025-05-07 08:23:02 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 68 (line 1 column 69)
+2025-05-07 09:48:18 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 84 (line 1 column 85)
+2025-05-07 09:48:18 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 84 (line 1 column 85)
+2025-05-07 09:48:18 [ERROR]: 语言模型处理失败: Unterminated string in JSON at position 84 (line 1 column 85)
+2025-05-07 09:48:18 [ERROR]: 处理聊天请求失败: 语言模型处理失败: Unterminated string in JSON at position 84 (line 1 column 85)
+2025-05-07 10:14:24 [ERROR]: sendMessage中发生错误: ReferenceError: handleStreamResponse is not defined
+    at Object.sendMessage (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:455:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/routes/chat.js:32:22
+2025-05-07 10:16:54 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 110 (line 1 column 111)
+2025-05-07 10:16:54 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 110 (line 1 column 111)
+2025-05-07 10:16:54 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 110 (line 1 column 111)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-08 11:03:32 [ERROR]: 文生图API调用失败: getaddrinfo ENOTFOUND api.liblib.ai
+2025-05-08 11:03:32 [ERROR]: 函数执行失败: 文生图失败: getaddrinfo ENOTFOUND api.liblib.ai
+2025-05-08 11:15:06 [ERROR]: 文生图API调用未返回预期数据:
+2025-05-08 11:15:06 [ERROR]: 文生图API调用失败: 文生图API调用未返回预期的图像数据
+2025-05-08 11:15:06 [ERROR]: 函数执行失败: 文生图失败: 文生图API调用未返回预期的图像数据
+2025-05-08 12:36:56 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 61 (line 1 column 62)
+2025-05-08 12:36:56 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 61 (line 1 column 62)
+2025-05-08 12:36:56 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 61 (line 1 column 62)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-08 12:37:19 [ERROR]: 文生图API调用未返回预期数据:
+2025-05-08 12:37:19 [ERROR]: 文生图API调用失败: 文生图API调用未返回预期的图像数据
+2025-05-08 12:37:19 [ERROR]: 函数执行失败: 文生图失败: 文生图API调用未返回预期的图像数据
+2025-05-08 14:52:08 [ERROR]: 文生图API调用未返回预期数据:
+2025-05-08 14:52:08 [ERROR]: 响应code: 100000
+2025-05-08 14:52:08 [ERROR]: 响应msg: 参数无效: aspectRatio, imageSize
+2025-05-08 14:52:08 [ERROR]: 文生图API调用失败: 文生图API调用未返回预期的图像数据: 参数无效: aspectRatio, imageSize
+2025-05-08 14:52:08 [ERROR]: 请求配置错误: 文生图API调用未返回预期的图像数据: 参数无效: aspectRatio, imageSize
+2025-05-08 14:52:08 [ERROR]: 文生图API调用失败: 文生图失败: 文生图API调用未返回预期的图像数据: 参数无效: aspectRatio, imageSize
+2025-05-08 14:52:08 [ERROR]: 函数执行失败: 文生图失败: 文生图失败: 文生图API调用未返回预期的图像数据: 参数无效: aspectRatio, imageSize
+2025-05-08 14:55:55 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 65 (line 1 column 66)
+2025-05-08 14:55:55 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 65 (line 1 column 66)
+2025-05-08 14:55:55 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 65 (line 1 column 66)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-08 15:01:32 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 78 (line 1 column 79)
+2025-05-08 15:01:32 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 78 (line 1 column 79)
+2025-05-08 15:01:32 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 78 (line 1 column 79)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-08 15:02:11 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 82 (line 1 column 83)
+2025-05-08 15:02:11 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 82 (line 1 column 83)
+2025-05-08 15:02:11 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 82 (line 1 column 83)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)

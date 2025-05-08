@@ -32,7 +32,7 @@ const MessageList = ({ messages }) => {
       {messages.map((message) => (
         <div 
           key={message.id} 
-          className={`message-item ${message.type}`}
+          className={`message-item ${message.type} ${message.isQuestion ? 'question-message' : ''}`}
           id={`src/components/MessageList.js:29:11-${message.id}`}
         >
           {/* 消息头部：头像和时间 */}

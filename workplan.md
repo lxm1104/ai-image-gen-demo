@@ -32,9 +32,15 @@
 3. ❌ 性能优化
 4. ❌ Bug修复
 
-### 阶段五：部署 [部分完成]
+### 阶段五：部署 [受阻]
 1. ✅ 完善Docker配置
 2. ✅ 部署说明文档
+3. ✅ 分析项目结构和 `docker-compose.yml`
+4. ❌ **准备并执行部署命令 (再次失败，原因：网络超时无法拉取基础镜像)**
+5. 🟡 **[新增] 移除 `docker-compose.yml` 中的 `version` 属性**
+6. 🟡 **[新增] 检查网络连接到 Docker Hub**
+7. ❌ 验证部署 (被阻塞)
+8. ❌ 更新技术文档 (被阻塞)
 
 ## 当前进度
 - 基础框架已完成，包括前端UI组件和后端API服务的基本实现
@@ -48,3 +54,26 @@
 4. 添加更详细的日志记录和错误处理
 5. 考虑添加用户认证系统(可选)
 6. 试运行并部署应用
+
+## 工作计划
+
+### 任务：修复图片生成API问题
+
+#### 当前子任务：调查并修复 `handleStreamResponse` 的 `ReferenceError`
+
+**步骤：**
+1.  检查 `logs/app.log` 中关于 `handleStreamResponse` 的错误记录。
+2.  定位 `handleStreamResponse` 的调用位置和预期定义位置。
+3.  根据调查结果修复错误。
+4.  测试图片生成功能，确保问题已解决。
+
+**已完成：**
+- 更新了 `imageGenerationService.js` 中的 `textToImage` 函数，以符合 LiblibAI API 的要求。
+- 修复了参数和JSON解析相关的一些问题。
+
+**待办：**
+- [x] ~~**新任务 (高优先级):** 修改图片生成逻辑，使得当图片成功生成时，API响应只包含图片信息，不附带额外文字说明~~.
+- [x] ~~调查并修复 `handleStreamResponse` 的 `ReferenceError`~~ (Investigation complete: Function not found in active code, error likely outdated).
+- [x] ~~检查并确保 `logger` 配置正确，以便 `logs/app.log` 能正常生成和写入~~ (Configuration in `server/config/logger.js` verified; actual file creation to be confirmed on server run).
+- [x] ~~更新 `docs/technical_design.md`~~.
+- [ ] 全面测试图片生成功能 (包括验证 `logs/app.log` 的生成和内容，并确认新修改的响应行为)。

@@ -66,10 +66,21 @@
 - `/api/generate`：处理图片生成
 
 #### 服务层
-- `languageModelService`：调用语言模型API
+- `languageModelService`：调用语言模型API（如ModelScope）。
+  - **Stream Handling**: Handles streaming responses from the language model internally (within `callModelScopeAPI` using a `chunkHandler`). The previously considered `handleStreamResponse` function is obsolete.
 - `imageGenerationService`：调用图像生成模型API
 - `sessionService`：管理用户会话
 - `fileService`：处理文件上传和存储
+
+#### Logging
+- **Configuration**: Logging is configured in `server/config/logger.js`.
+- **Library**: Uses `winston` for robust logging.
+- **Transports**:
+    - Console output for real-time monitoring.
+    - File output to `logs/app.log` for general application logs (level: `info` and above).
+    - File output to `logs/error.log` specifically for error-level logs.
+- **Log Directory**: The `logs` directory is created at the project root (`/logs`) if it doesn't exist.
+- **Format**: Logs include a timestamp, level, and message.
 
 ## 数据流设计
 

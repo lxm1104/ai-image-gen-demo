@@ -21,6 +21,13 @@
   align-self: flex-start;
 }
 
+/* 问题消息的特殊样式 */
+.message-item.question-message .message-content {
+  background-color: #fffbe6; /* 浅黄色背景 */
+  border: 1px solid #ffe58f; /* 黄色边框 */
+  border-left: 4px solid #faad14; /* 左侧宽边框 */
+}
+
 .message-header {
   display: flex;
   align-items: center;
