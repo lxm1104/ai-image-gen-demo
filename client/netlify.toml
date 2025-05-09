@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[dev]
+  command = "npm start"
+  targetPort = 3000
+  publish = "public"
+
+[[rewrites]]
+  from = "/api/*"
+  to = "https://my-image-app-server.onrender.com/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
