@@ -1,95 +1,275 @@
-2025-05-08 15:35:32 [INFO]: 服务器运行在端口 5001
-2025-05-08 15:36:51 [INFO]: 服务器运行在端口 5001
-2025-05-08 15:39:50 [INFO]: 收到聊天请求: 一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格
-
-2025-05-08 15:39:50 [INFO]: 处理用户消息，消息长度: 41
-2025-05-08 15:39:50 [INFO]: 调用ModelScope API，提示文本长度: 41
-2025-05-08 15:39:50 [INFO]: 使用的API密钥: 9f00...b181
-2025-05-08 15:39:50 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
-2025-05-08 15:39:50 [INFO]: 使用模型: Qwen/Qwen3-32B
-2025-05-08 15:39:50 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格\n"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
-2025-05-08 15:39:50 [INFO]: 开始发送API请求...
-2025-05-08 15:39:50 [INFO]: ModelScope API流式调用成功
-2025-05-08 15:39:50 [INFO]: 响应状态码: 200
-2025-05-08 15:39:50 [INFO]: 响应头: {"date":"Thu, 08 May 2025 07:39:51 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0b62601e17466899905386143e365cfd9a94a3450a6d447086cad2f26cc290;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
-2025-05-08 15:39:55 [INFO]: 收到完成标记，流式响应完成
-2025-05-08 15:39:55 [INFO]: 流式响应结束，获得完整内容长度: 0
-2025-05-08 15:39:55 [INFO]: 处理工具调用: {"index":0,"id":"call_9e28d83a19ed4b589c220d","type":"function","function":{"name":"generate_image","arguments":"{\"prompt\": \"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格\"}"}}
-2025-05-08 15:39:55 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"prompt": "一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"}" (长度: 54)
-2025-05-08 15:39:55 [INFO]: 成功解析工具调用参数: {"prompt":"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"}
-2025-05-08 15:39:55 [INFO]: 执行函数调用: generate_image, 参数: {"prompt":"一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"}
-2025-05-08 15:39:55 [INFO]: 调用文生图函数，提示: 一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格
-2025-05-08 15:39:55 [INFO]: 开始调用文生图API，提示: "一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格"
-2025-05-08 15:39:55 [INFO]: 根据LiblibAI API文档更新了生成参数结构
-2025-05-08 15:39:55 [INFO]: 发送文生图API请求，请求参数:
-2025-05-08 15:39:55 [INFO]: 签名原文: /api/generate/webui/text2img/ultra&1746689995618&2aqfooqv8ku
-2025-05-08 15:39:55 [INFO]: 签名base64原始结果: qxIZmOWWQ8qIeI0KpXKF+Cvh/Jo=
-2025-05-08 15:39:55 [INFO]: URL安全的签名结果: qxIZmOWWQ8qIeI0KpXKF-Cvh_Jo
-2025-05-08 15:39:55 [INFO]: 完整请求URL: https://openapi.liblibai.cloud/api/generate/webui/text2img/ultra?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=qxIZmOWWQ8qIeI0KpXKF-Cvh_Jo&Timestamp=1746689995618&SignatureNonce=2aqfooqv8ku
-2025-05-08 15:39:55 [INFO]: AccessKey: DHNvNAnNIjVNUfn9Suk13A
-2025-05-08 15:39:55 [INFO]: Timestamp: 1746689995618
-2025-05-08 15:39:55 [INFO]: SignatureNonce: 2aqfooqv8ku
-2025-05-08 15:39:55 [INFO]: Signature: qxIZmOWWQ8qIeI0KpXKF-Cvh_Jo
-2025-05-08 15:39:57 [INFO]: 文生图API调用成功，处理返回结果
-2025-05-08 15:39:57 [INFO]: API响应状态码: 200
-2025-05-08 15:39:57 [INFO]: API响应头: {"content-type":"application/json","date":"Thu, 08 May 2025 07:39:57 GMT","req-cost-time":"1815","req-arrive-time":"1746689996053","resp-start-time":"1746689997868","x-envoy-upstream-service-time":"1814","set-cookie":["acw_tc=9c05aef4-5867-4e42-b1fc-2aa3b2320763d4c080ed1119a5d1aec91eb2b4c04a6c;path=/;HttpOnly;Max-Age=1800"],"server":"istio-envoy","transfer-encoding":"chunked"}
-2025-05-08 15:39:57 [INFO]: API响应内容: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c"},"msg":""}
-2025-05-08 15:39:57 [INFO]: 文生图任务已创建，任务ID: 29c516ee4d9548789c641eb2deaa6d9c，等待生成完成...
-2025-05-08 15:39:57 [INFO]: 签名原文: /api/generate/webui/status&1746689997700&1nsx4ytmpab
-2025-05-08 15:39:57 [INFO]: 签名base64原始结果: CVv7EnCKUdMyxCIUTJlMXXN1cNE=
-2025-05-08 15:39:57 [INFO]: URL安全的签名结果: CVv7EnCKUdMyxCIUTJlMXXN1cNE
-2025-05-08 15:39:57 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=CVv7EnCKUdMyxCIUTJlMXXN1cNE&Timestamp=1746689997700&SignatureNonce=1nsx4ytmpab
-2025-05-08 15:39:57 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
-2025-05-08 15:39:57 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
-2025-05-08 15:39:57 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":2,"percentCompleted":0.5,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
-2025-05-08 15:39:57 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 2，进度: 0.5
-2025-05-08 15:39:57 [INFO]: 图像数量: 0
-2025-05-08 15:39:57 [INFO]: 图像详情: []
-2025-05-08 15:40:00 [INFO]: 签名原文: /api/generate/webui/status&1746690000807&dsaxk0qy8e4
-2025-05-08 15:40:00 [INFO]: 签名base64原始结果: jEmKOAyjvphOC2hxQdiw9hYFI/A=
-2025-05-08 15:40:00 [INFO]: URL安全的签名结果: jEmKOAyjvphOC2hxQdiw9hYFI_A
-2025-05-08 15:40:00 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=jEmKOAyjvphOC2hxQdiw9hYFI_A&Timestamp=1746690000807&SignatureNonce=dsaxk0qy8e4
-2025-05-08 15:40:00 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
-2025-05-08 15:40:00 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
-2025-05-08 15:40:00 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":2,"percentCompleted":0.33,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
-2025-05-08 15:40:00 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 2，进度: 0.33
-2025-05-08 15:40:00 [INFO]: 图像数量: 0
-2025-05-08 15:40:00 [INFO]: 图像详情: []
-2025-05-08 15:40:03 [INFO]: 签名原文: /api/generate/webui/status&1746690003892&04yxqwxlsk0p
-2025-05-08 15:40:03 [INFO]: 签名base64原始结果: vvljvBh69YgFWTwxQLNq9QsgC0U=
-2025-05-08 15:40:03 [INFO]: URL安全的签名结果: vvljvBh69YgFWTwxQLNq9QsgC0U
-2025-05-08 15:40:03 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=vvljvBh69YgFWTwxQLNq9QsgC0U&Timestamp=1746690003892&SignatureNonce=04yxqwxlsk0p
-2025-05-08 15:40:03 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
-2025-05-08 15:40:03 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
-2025-05-08 15:40:03 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":2,"percentCompleted":0.67,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
-2025-05-08 15:40:03 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 2，进度: 0.67
-2025-05-08 15:40:03 [INFO]: 图像数量: 0
-2025-05-08 15:40:03 [INFO]: 图像详情: []
-2025-05-08 15:40:06 [INFO]: 签名原文: /api/generate/webui/status&1746690006979&h7r2j0lrcdh
-2025-05-08 15:40:06 [INFO]: 签名base64原始结果: OoJoURE16d4yOAD/DA73iQXyNmY=
-2025-05-08 15:40:06 [INFO]: URL安全的签名结果: OoJoURE16d4yOAD_DA73iQXyNmY
-2025-05-08 15:40:06 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=OoJoURE16d4yOAD_DA73iQXyNmY&Timestamp=1746690006979&SignatureNonce=h7r2j0lrcdh
-2025-05-08 15:40:06 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
-2025-05-08 15:40:06 [INFO]: 查询状态参数 - 任务ID: 29c516ee4d9548789c641eb2deaa6d9c
-2025-05-08 15:40:07 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"29c516ee4d9548789c641eb2deaa6d9c","generateStatus":5,"percentCompleted":1,"generateMsg":null,"pointsCost":15,"accountBalance":395,"images":[{"imageUrl":"https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png","seed":7398462704,"auditStatus":3}]},"msg":""}
-2025-05-08 15:40:07 [INFO]: 任务 29c516ee4d9548789c641eb2deaa6d9c 当前状态: 5，进度: 1
-2025-05-08 15:40:07 [INFO]: 图像数量: 1
-2025-05-08 15:40:07 [INFO]: 图像详情: [{"imageUrl":"https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png","seed":7398462704,"auditStatus":3}]
-2025-05-08 15:40:07 [INFO]: 获取到文生图生成的图像URL: https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png
-2025-05-08 15:40:07 [INFO]: 开始下载图像: https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png 到 /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/generated_1746690007027.png
-2025-05-08 15:40:07 [INFO]: 图像下载完成: /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/generated_1746690007027.png
-2025-05-08 15:40:07 [INFO]: 文生图完成，图像已保存到本地，URL: /uploads/generated_1746690007027.png
-2025-05-08 15:40:07 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
+2025-05-08 15:42:51 [INFO]: 收到聊天请求: 把背景的白天变为黑夜
+2025-05-08 15:42:51 [INFO]: 处理用户消息，消息长度: 10
+2025-05-08 15:42:51 [INFO]: 调用ModelScope API，提示文本长度: 10
+2025-05-08 15:42:51 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-08 15:42:51 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-08 15:42:51 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-08 15:42:51 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"把背景的白天变为黑夜"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-08 15:42:51 [INFO]: 开始发送API请求...
+2025-05-08 15:42:52 [INFO]: ModelScope API流式调用成功
+2025-05-08 15:42:52 [INFO]: 响应状态码: 200
+2025-05-08 15:42:52 [INFO]: 响应头: {"date":"Thu, 08 May 2025 07:42:52 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0b62601e17466901719406705e362a72b4bfda33fe7fe99fcb422fa52b64d2;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-08 15:42:57 [INFO]: 收到完成标记，流式响应完成
+2025-05-08 15:42:57 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-08 15:42:57 [INFO]: 处理工具调用: {"index":0,"id":"call_96450585a2aa4ba5a17a71","type":"function","function":{"name":"ask_user","arguments":"{\"questions\": \"您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。\"}"}}
+2025-05-08 15:42:57 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"questions": "您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。"}" (长度: 83)
+2025-05-08 15:42:57 [INFO]: 成功解析工具调用参数: {"questions":"您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。"}
+2025-05-08 15:42:57 [INFO]: 执行函数调用: ask_user, 参数: {"questions":"您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。"}
+2025-05-08 15:42:57 [INFO]: 调用ask_user函数，提出问题: 您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。
+2025-05-08 15:42:57 [INFO]: [DEBUG executeFunction ask_user] Returning: {"success":true,"message":"您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。","isQuestion":true}
+2025-05-08 15:42:57 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
+  "success": true,
+  "message": "您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。",
+  "isQuestion": true
+}
+2025-05-08 15:42:57 [INFO]: [DEBUG sendMessage] Entered 'if (!hasSentToolCallResponse)' block. Current responseText before this block: ''
+2025-05-08 15:42:57 [WARN]: No tool response sent, and no direct choices. Using modelResponse.message: "您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。". ModelResponse was: {"success":true,"message":"您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。","isQuestion":true}
+2025-05-08 15:42:57 [INFO]: 语言模型响应文本 (after !hasSentToolCallResponse block): 您是否已经有一张需要转换的白天图片？如果是，请提供该图片的URL；如果没有，我将先根据描述生成一张白天的图片，然后再转换为夜景效果。
+2025-05-08 15:42:57 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-08 15:42:57 [INFO]: 语言模型响应成功
+2025-05-08 15:43:11 [INFO]: 图片上传成功: 1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-08 15:43:28 [INFO]: 收到聊天请求: 把背景的白天变为黑夜
+2025-05-08 15:43:28 [INFO]: 处理用户消息，消息长度: 10, 包含图片
+2025-05-08 15:43:28 [INFO]: 调用ModelScope API，提示文本长度: 10
+2025-05-08 15:43:28 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-08 15:43:28 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-08 15:43:28 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-08 15:43:28 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"把背景的白天变为黑夜\n\n[用户上传了一张图片，图片URL: /uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png]"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-08 15:43:28 [INFO]: 开始发送API请求...
+2025-05-08 15:43:28 [INFO]: ModelScope API流式调用成功
+2025-05-08 15:43:28 [INFO]: 响应状态码: 200
+2025-05-08 15:43:28 [INFO]: 响应头: {"date":"Thu, 08 May 2025 07:43:28 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217466902084353137e86eec58196a80887ce80b222f7e081d780e0;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-08 15:43:36 [INFO]: 收到完成标记，流式响应完成
+2025-05-08 15:43:36 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-08 15:43:36 [INFO]: 处理工具调用: {"index":0,"id":"call_264622d558aa4c82a8d184","type":"function","function":{"name":"day_to_night","arguments":"{\"imageUrl\": \"/uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png\"}"}}
+2025-05-08 15:43:36 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"imageUrl": "/uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png"}" (长度: 117)
+2025-05-08 15:43:36 [INFO]: 成功解析工具调用参数: {"imageUrl":"/uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png"}
+2025-05-08 15:43:36 [INFO]: 执行函数调用: day_to_night, 参数: {"imageUrl":"/uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png"}
+2025-05-08 15:43:36 [INFO]: 调用白天转夜景函数，图片URL: /uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-08 15:43:36 [INFO]: 开始调用白天转夜景API，图像URL: /uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-08 15:43:36 [INFO]: 图像路径: /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/1746690191247-709146358-ab3247db245dc618f9ce877669c5feb2733eab09787705082a81ccd40744e435.png
+2025-05-08 15:43:36 [INFO]: 发送白天转夜景API请求
+2025-05-08 15:43:37 [INFO]: 白天转夜景API调用成功，处理返回结果
+2025-05-08 15:43:37 [ERROR]: 白天转夜景API调用未返回预期数据:
+2025-05-08 15:43:37 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-08 15:43:37 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-08 15:43:37 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
+  "success": false,
+  "functionName": "day_to_night",
+  "error": "白天转夜景失败: 白天转夜景API调用未返回预期的图像数据"
+}
+2025-05-08 15:43:37 [INFO]: [DEBUG sendMessage] Entered 'if (!hasSentToolCallResponse)' block. Current responseText before this block: ''
+2025-05-08 15:43:37 [WARN]: 响应中没有找到有效的choices或直接内容，或工具调用处理后无有效响应。modelResponse: {
+  "success": false,
+  "functionName": "day_to_night",
+  "error": "白天转夜景失败: 白天转夜景API调用未返回预期的图像数据"
+}
+2025-05-08 15:43:37 [INFO]: 语言模型响应文本 (after !hasSentToolCallResponse block): 您好，我是AI助手。如果您想要生成图片或转换白天图片为夜景，请直接告诉我。
+2025-05-08 15:43:37 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-08 15:43:37 [INFO]: 语言模型响应成功
+2025-05-12 16:01:41 [INFO]: 服务器运行在端口 5001
+2025-05-12 16:33:01 [INFO]: 收到聊天请求: 一只猫
+2025-05-12 16:33:01 [INFO]: 处理用户消息，消息长度: 3
+2025-05-12 16:33:01 [INFO]: 调用ModelScope API，提示文本长度: 3
+2025-05-12 16:33:01 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-12 16:33:01 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-12 16:33:01 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-12 16:33:01 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"一只猫"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-12 16:33:01 [INFO]: 开始发送API请求...
+2025-05-12 16:33:03 [INFO]: ModelScope API流式调用成功
+2025-05-12 16:33:03 [INFO]: 响应状态码: 200
+2025-05-12 16:33:03 [INFO]: 响应头: {"date":"Mon, 12 May 2025 08:33:03 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217470387818227863e86b2de4529aa1c45f532ab9e12fb4d109722;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-12 16:33:08 [INFO]: 收到完成标记，流式响应完成
+2025-05-12 16:33:08 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-12 16:33:08 [INFO]: 处理工具调用: {"index":0,"id":"call_f6153bd1fc2c4b59aba8d8","type":"function","function":{"name":"ask_user","arguments":"{\"questions\": \"您能提供更多细节吗？比如猫的品种、颜色、动作（比如睡觉、玩耍），以及背景环境（比如室内、花园）"}}
+2025-05-12 16:33:08 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"questions": "您能提供更多细节吗？比如猫的品种、颜色、动作（比如睡觉、玩耍），以及背景环境（比如室内、花园）" (长度: 62)
+2025-05-12 16:33:08 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 62 (line 1 column 63)
+2025-05-12 16:33:08 [INFO]: 清理后的函数参数字符串: {"questions": "您能提供更多细节吗？比如猫的品种、颜色、动作（比如睡觉、玩耍），以及背景环境（比如室内、花园）
+2025-05-12 16:33:08 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 62 (line 1 column 63)
+2025-05-12 16:33:08 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 62 (line 1 column 63)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-12 16:33:08 [INFO]: 语言模型响应成功
+2025-05-12 16:33:29 [INFO]: 收到聊天请求: 一只猫
+2025-05-12 16:33:29 [INFO]: 处理用户消息，消息长度: 3
+2025-05-12 16:33:29 [INFO]: 调用ModelScope API，提示文本长度: 3
+2025-05-12 16:33:29 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-12 16:33:29 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-12 16:33:29 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-12 16:33:29 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"一只猫"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-12 16:33:29 [INFO]: 开始发送API请求...
+2025-05-12 16:33:32 [INFO]: ModelScope API流式调用成功
+2025-05-12 16:33:32 [INFO]: 响应状态码: 200
+2025-05-12 16:33:32 [INFO]: 响应头: {"date":"Mon, 12 May 2025 08:33:32 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217470388115393993e8530fc4ebb2f79b761ee42ffc3f3272992ed;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-12 16:33:36 [INFO]: 收到完成标记，流式响应完成
+2025-05-12 16:33:36 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-12 16:33:36 [INFO]: 处理工具调用: {"index":0,"id":"call_6b9d5546f8d64897ac8d6d","type":"function","function":{"name":"ask_user","arguments":"{\"questions\": \"您能提供更多关于猫的细节吗？比如品种、颜色、动作，以及背景环境等。"}}
+2025-05-12 16:33:36 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"questions": "您能提供更多关于猫的细节吗？比如品种、颜色、动作，以及背景环境等。" (长度: 48)
+2025-05-12 16:33:36 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 48 (line 1 column 49)
+2025-05-12 16:33:36 [INFO]: 清理后的函数参数字符串: {"questions": "您能提供更多关于猫的细节吗？比如品种、颜色、动作，以及背景环境等。
+2025-05-12 16:33:36 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 48 (line 1 column 49)
+2025-05-12 16:33:36 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 48 (line 1 column 49)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-12 16:33:36 [INFO]: 语言模型响应成功
+2025-05-12 16:58:53 [INFO]: 服务器运行在端口 5001
+2025-05-12 17:00:31 [INFO]: 服务器运行在端口 5001
+2025-05-12 17:01:31 [INFO]: 收到聊天请求: 两只狗
+2025-05-12 17:01:31 [INFO]: 处理用户消息，消息长度: 3
+2025-05-12 17:01:31 [INFO]: 调用ModelScope API，提示文本长度: 3
+2025-05-12 17:01:31 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-12 17:01:31 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-12 17:01:31 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-12 17:01:31 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"两只狗"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-12 17:01:31 [INFO]: 开始发送API请求...
+2025-05-12 17:01:33 [INFO]: ModelScope API流式调用成功
+2025-05-12 17:01:33 [INFO]: 响应状态码: 200
+2025-05-12 17:01:33 [INFO]: 响应头: {"date":"Mon, 12 May 2025 09:01:33 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217470404919561606e86cb4e0b883183536895d5600ed5bfbc5fc9;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-12 17:01:39 [INFO]: 收到完成标记，流式响应完成
+2025-05-12 17:01:39 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-12 17:01:39 [INFO]: 处理工具调用: {"index":0,"id":"call_9e093538423745fa804809","type":"function","function":{"name":"ask_user","arguments":"{\"questions\": \"您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。"}}
+2025-05-12 17:01:39 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"questions": "您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。" (长度: 91)
+2025-05-12 17:01:39 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 91 (line 1 column 92)
+2025-05-12 17:01:39 [INFO]: 修复未终止字符串后: {"questions": "您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。"}
+2025-05-12 17:01:39 [INFO]: 执行函数调用: ask_user, 参数: {"questions":"您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。"}
+2025-05-12 17:01:39 [INFO]: 调用ask_user函数，提出问题: 您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。
+2025-05-12 17:01:39 [INFO]: [DEBUG executeFunction ask_user] Returning: {"success":true,"message":"您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。","isQuestion":true}
+2025-05-12 17:01:39 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
+  "success": true,
+  "message": "您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。",
+  "isQuestion": true
+}
+2025-05-12 17:01:39 [INFO]: [DEBUG sendMessage] Entered 'if (!hasSentToolCallResponse)' block. Current responseText before this block: ''
+2025-05-12 17:01:39 [WARN]: No tool response sent, and no direct choices. Using modelResponse.message: "您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。". ModelResponse was: {"success":true,"message":"您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。","isQuestion":true}
+2025-05-12 17:01:39 [INFO]: 语言模型响应文本 (after !hasSentToolCallResponse block): 您能提供更详细的描述吗？例如：狗的品种（如金毛、泰迪等）、颜色、动作（如奔跑、玩耍）、背景环境（如草地、公园）等信息，这样我可以生成更符合您期望的图片。
+2025-05-12 17:01:39 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-12 17:01:39 [INFO]: 语言模型响应成功
+2025-05-12 17:02:00 [INFO]: 收到聊天请求: 生成图片：一格漫画
+第1格
+标题 when you know absolutely nothing about the company but still go the interview 置于画面最上方，简洁醒目的白色大字。场景：一只拟人化的金色拉布拉多犬准备走进一家名为 Big Frank’s Hot Dogs 的快餐店——午后阳光下，红黄相间的招牌鲜亮，玻璃门上贴着 Interview Today 招聘海报。主体：拉布拉多犬穿合身西装外套，前爪紧张地打着领带，嘴里叼着整齐的文件夹，尾巴僵直，抬头深呼吸，踮起后脚准备迈步进入。狗的表情既忐忑又自我激励，体现对公司一无所知却仍去面试的反差幽默。旁边几名路人掩嘴偷笑，店内巨大热狗广告画与主体形成讽刺呼应。画面风格夸张写实漫画，饱和暖色与粗线条突出场景张力与喜剧效果。
+2025-05-12 17:02:00 [INFO]: 处理用户消息，消息长度: 362
+2025-05-12 17:02:00 [INFO]: 调用ModelScope API，提示文本长度: 362
+2025-05-12 17:02:00 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-12 17:02:00 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-12 17:02:00 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-12 17:02:00 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"生成图片：一格漫画\n第1格\n标题 when you know absolutely nothing about the company but still go the interview 置于画面最上方，简洁醒目的白色大字。场景：一只拟人化的金色拉布拉多犬准备走进一家名为 Big Frank’s Hot Dogs 的快餐店——午后阳光下，红黄相间的招牌鲜亮，玻璃门上贴着 Interview Today 招聘海报。主体：拉布拉多犬穿合身西装外套，前爪紧张地打着领带，嘴里叼着整齐的文件夹，尾巴僵直，抬头深呼吸，踮起后脚准备迈步进入。狗的表情既忐忑又自我激励，体现对公司一无所知却仍去面试的反差幽默。旁边几名路人掩嘴偷笑，店内巨大热狗广告画与主体形成讽刺呼应。画面风格夸张写实漫画，饱和暖色与粗线条突出场景张力与喜剧效果。"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-12 17:02:00 [INFO]: 开始发送API请求...
+2025-05-12 17:02:01 [INFO]: ModelScope API流式调用成功
+2025-05-12 17:02:01 [INFO]: 响应状态码: 200
+2025-05-12 17:02:01 [INFO]: 响应头: {"date":"Mon, 12 May 2025 09:02:01 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cd217470405203212434e8529a88f0bf36c490ae79ec34bdfbda554c0;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-12 17:02:19 [INFO]: 收到完成标记，流式响应完成
+2025-05-12 17:02:19 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-12 17:02:19 [INFO]: 处理工具调用: {"index":0,"id":"call_55f12a47f9404c63b9cc25","type":"function","function":{"name":"generate_image","arguments":"{\"prompt\": \"一格漫画：标题 'when you know absolutely nothing about the company but still go the interview' 置于画面最上方，简洁醒目的白色大字。场景为午后阳光下的快餐店'Big Frank’s Hot Dogs'，红黄相间招牌鲜亮，玻璃门贴着'Interview Today'招聘海报。主体是拟人化金色拉布拉多犬穿着合身西装外套，前爪紧张打领带，嘴里叼着整齐文件夹，尾巴僵直抬头深呼吸，踮起后脚准备迈步进入。狗的表情忐忑且自我激励，周围有掩嘴偷笑的路人，店内巨大热狗广告画与主体形成讽刺呼应。画面采用夸张写实漫画风格，饱和暖色调搭配粗线条，突出场景张力与喜剧效果。\"}"}}
+2025-05-12 17:02:19 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"prompt": "一格漫画：标题 'when you know absolutely nothing about the company but still go the interview' 置于画面最上方，简洁醒目的白色大字。场景为午后阳光下的快餐店'Big Frank’s Hot Dogs'，红黄相间招牌鲜亮，玻璃门贴着'Interview Today'招聘海报。主体是拟人化金色拉布拉多犬穿着合身西装外套，前爪紧张打领带，嘴里叼着整齐文件夹，尾巴僵直抬头深呼吸，踮起后脚准备迈步进入。狗的表情忐忑且自我激励，周围有掩嘴偷笑的路人，店内巨大热狗广告画与主体形成讽刺呼应。画面采用夸张写实漫画风格，饱和暖色调搭配粗线条，突出场景张力与喜剧效果。"}" (长度: 330)
+2025-05-12 17:02:19 [INFO]: 成功解析工具调用参数: {"prompt":"一格漫画：标题 'when you know absolutely nothing about the company but still go the interview' 置于画面最上方，简洁醒目的白色大字。场景为午后阳光下的快餐店'Big Frank’s Hot Dogs'，红黄相间招牌鲜亮，玻璃门贴着'Interview Today'招聘海报。主体是拟人化金色拉布拉多犬穿着合身西装外套，前爪紧张打领带，嘴里叼着整齐文件夹，尾巴僵直抬头深呼吸，踮起后脚准备迈步进入。狗的表情忐忑且自我激励，周围有掩嘴偷笑的路人，店内巨大热狗广告画与主体形成讽刺呼应。画面采用夸张写实漫画风格，饱和暖色调搭配粗线条，突出场景张力与喜剧效果。"}
+2025-05-12 17:02:19 [INFO]: 执行函数调用: generate_image, 参数: {"prompt":"一格漫画：标题 'when you know absolutely nothing about the company but still go the interview' 置于画面最上方，简洁醒目的白色大字。场景为午后阳光下的快餐店'Big Frank’s Hot Dogs'，红黄相间招牌鲜亮，玻璃门贴着'Interview Today'招聘海报。主体是拟人化金色拉布拉多犬穿着合身西装外套，前爪紧张打领带，嘴里叼着整齐文件夹，尾巴僵直抬头深呼吸，踮起后脚准备迈步进入。狗的表情忐忑且自我激励，周围有掩嘴偷笑的路人，店内巨大热狗广告画与主体形成讽刺呼应。画面采用夸张写实漫画风格，饱和暖色调搭配粗线条，突出场景张力与喜剧效果。"}
+2025-05-12 17:02:19 [INFO]: 调用文生图函数，提示: 一格漫画：标题 'when you know absolutely nothing about the company but still go the interview' 置于画面最上方，简洁醒目的白色大字。场景为午后阳光下的快餐店'Big Frank’s Hot Dogs'，红黄相间招牌鲜亮，玻璃门贴着'Interview Today'招聘海报。主体是拟人化金色拉布拉多犬穿着合身西装外套，前爪紧张打领带，嘴里叼着整齐文件夹，尾巴僵直抬头深呼吸，踮起后脚准备迈步进入。狗的表情忐忑且自我激励，周围有掩嘴偷笑的路人，店内巨大热狗广告画与主体形成讽刺呼应。画面采用夸张写实漫画风格，饱和暖色调搭配粗线条，突出场景张力与喜剧效果。
+2025-05-12 17:02:19 [INFO]: 开始调用文生图API，提示: "一格漫画：标题 'when you know absolutely nothing about th..."
+2025-05-12 17:02:19 [INFO]: 根据LiblibAI API文档更新了生成参数结构
+2025-05-12 17:02:19 [INFO]: 发送文生图API请求，请求参数:
+2025-05-12 17:02:19 [INFO]: 签名原文: /api/generate/webui/text2img/ultra&1747040539575&vstdli4r3q9
+2025-05-12 17:02:19 [INFO]: 签名base64原始结果: hhnG/wMsSfI94mq2N35ja2ajKb0=
+2025-05-12 17:02:19 [INFO]: URL安全的签名结果: hhnG_wMsSfI94mq2N35ja2ajKb0
+2025-05-12 17:02:19 [INFO]: 完整请求URL: https://openapi.liblibai.cloud/api/generate/webui/text2img/ultra?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=hhnG_wMsSfI94mq2N35ja2ajKb0&Timestamp=1747040539575&SignatureNonce=vstdli4r3q9
+2025-05-12 17:02:19 [INFO]: AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-12 17:02:19 [INFO]: Timestamp: 1747040539575
+2025-05-12 17:02:19 [INFO]: SignatureNonce: vstdli4r3q9
+2025-05-12 17:02:19 [INFO]: Signature: hhnG_wMsSfI94mq2N35ja2ajKb0
+2025-05-12 17:02:24 [INFO]: 文生图API调用成功，处理返回结果
+2025-05-12 17:02:24 [INFO]: API响应状态码: 200
+2025-05-12 17:02:24 [INFO]: API响应头: {"content-type":"application/json","date":"Mon, 12 May 2025 09:02:24 GMT","req-cost-time":"3966","req-arrive-time":"1747040540377","resp-start-time":"1747040544344","x-envoy-upstream-service-time":"3965","set-cookie":["acw_tc=ead00694-069b-4a67-8a4c-27d7c9a4bcc73506406418a1c714c321709016f01eee;path=/;HttpOnly;Max-Age=1800"],"server":"istio-envoy","transfer-encoding":"chunked"}
+2025-05-12 17:02:24 [INFO]: API响应内容: {"code":0,"data":{"generateUuid":"d2fb9ef4db944ee0b23f97af879c91b0"},"msg":""}
+2025-05-12 17:02:24 [INFO]: 文生图任务已创建，任务ID: d2fb9ef4db944ee0b23f97af879c91b0，等待生成完成...
+2025-05-12 17:02:24 [INFO]: 签名原文: /api/generate/webui/status&1747040544258&eq5rsr4w654
+2025-05-12 17:02:24 [INFO]: 签名base64原始结果: 1+AiOpKGLTnDMlEugGFTMSD6Xr0=
+2025-05-12 17:02:24 [INFO]: URL安全的签名结果: 1-AiOpKGLTnDMlEugGFTMSD6Xr0
+2025-05-12 17:02:24 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=1-AiOpKGLTnDMlEugGFTMSD6Xr0&Timestamp=1747040544258&SignatureNonce=eq5rsr4w654
+2025-05-12 17:02:24 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-12 17:02:24 [INFO]: 查询状态参数 - 任务ID: d2fb9ef4db944ee0b23f97af879c91b0
+2025-05-12 17:02:24 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"d2fb9ef4db944ee0b23f97af879c91b0","generateStatus":2,"percentCompleted":0.5,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
+2025-05-12 17:02:24 [INFO]: 任务 d2fb9ef4db944ee0b23f97af879c91b0 当前状态: 2，进度: 0.5
+2025-05-12 17:02:24 [INFO]: 图像数量: 0
+2025-05-12 17:02:24 [INFO]: 图像详情: []
+2025-05-12 17:02:27 [INFO]: 签名原文: /api/generate/webui/status&1747040547336&akx7r8qn2zq
+2025-05-12 17:02:27 [INFO]: 签名base64原始结果: NQOl7wsyQ5+cN7OPhjhg+B9SvPU=
+2025-05-12 17:02:27 [INFO]: URL安全的签名结果: NQOl7wsyQ5-cN7OPhjhg-B9SvPU
+2025-05-12 17:02:27 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=NQOl7wsyQ5-cN7OPhjhg-B9SvPU&Timestamp=1747040547336&SignatureNonce=akx7r8qn2zq
+2025-05-12 17:02:27 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-12 17:02:27 [INFO]: 查询状态参数 - 任务ID: d2fb9ef4db944ee0b23f97af879c91b0
+2025-05-12 17:02:27 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"d2fb9ef4db944ee0b23f97af879c91b0","generateStatus":2,"percentCompleted":0.01,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
+2025-05-12 17:02:27 [INFO]: 任务 d2fb9ef4db944ee0b23f97af879c91b0 当前状态: 2，进度: 0.01
+2025-05-12 17:02:27 [INFO]: 图像数量: 0
+2025-05-12 17:02:27 [INFO]: 图像详情: []
+2025-05-12 17:02:30 [INFO]: 签名原文: /api/generate/webui/status&1747040550412&7dlwgryl97a
+2025-05-12 17:02:30 [INFO]: 签名base64原始结果: 4ZMkX0mbX1aYp1U5w/Fwh7tkWrA=
+2025-05-12 17:02:30 [INFO]: URL安全的签名结果: 4ZMkX0mbX1aYp1U5w_Fwh7tkWrA
+2025-05-12 17:02:30 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=4ZMkX0mbX1aYp1U5w_Fwh7tkWrA&Timestamp=1747040550412&SignatureNonce=7dlwgryl97a
+2025-05-12 17:02:30 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-12 17:02:30 [INFO]: 查询状态参数 - 任务ID: d2fb9ef4db944ee0b23f97af879c91b0
+2025-05-12 17:02:30 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"d2fb9ef4db944ee0b23f97af879c91b0","generateStatus":2,"percentCompleted":0.67,"generateMsg":null,"pointsCost":null,"accountBalance":null,"images":[]},"msg":""}
+2025-05-12 17:02:30 [INFO]: 任务 d2fb9ef4db944ee0b23f97af879c91b0 当前状态: 2，进度: 0.67
+2025-05-12 17:02:30 [INFO]: 图像数量: 0
+2025-05-12 17:02:30 [INFO]: 图像详情: []
+2025-05-12 17:02:33 [INFO]: 签名原文: /api/generate/webui/status&1747040553485&9bha885866h
+2025-05-12 17:02:33 [INFO]: 签名base64原始结果: bPYXztZTUTr3jrkn50oyTbReh3I=
+2025-05-12 17:02:33 [INFO]: URL安全的签名结果: bPYXztZTUTr3jrkn50oyTbReh3I
+2025-05-12 17:02:33 [INFO]: 查询状态完整URL: https://openapi.liblibai.cloud/api/generate/webui/status?AccessKey=DHNvNAnNIjVNUfn9Suk13A&Signature=bPYXztZTUTr3jrkn50oyTbReh3I&Timestamp=1747040553485&SignatureNonce=9bha885866h
+2025-05-12 17:02:33 [INFO]: 查询状态参数 - AccessKey: DHNvNAnNIjVNUfn9Suk13A
+2025-05-12 17:02:33 [INFO]: 查询状态参数 - 任务ID: d2fb9ef4db944ee0b23f97af879c91b0
+2025-05-12 17:02:33 [INFO]: 查询状态响应: {"code":0,"data":{"generateUuid":"d2fb9ef4db944ee0b23f97af879c91b0","generateStatus":5,"percentCompleted":1,"generateMsg":null,"pointsCost":15,"accountBalance":380,"images":[{"imageUrl":"https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/1d8d914048b09d00f3322a7ab815b211580e140fab6c1028c23725a2f9d78277.png","seed":6561003788,"auditStatus":3}]},"msg":""}
+2025-05-12 17:02:33 [INFO]: 任务 d2fb9ef4db944ee0b23f97af879c91b0 当前状态: 5，进度: 1
+2025-05-12 17:02:33 [INFO]: 图像数量: 1
+2025-05-12 17:02:33 [INFO]: 图像详情: [{"imageUrl":"https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/1d8d914048b09d00f3322a7ab815b211580e140fab6c1028c23725a2f9d78277.png","seed":6561003788,"auditStatus":3}]
+2025-05-12 17:02:33 [INFO]: 获取到文生图生成的图像URL: https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/1d8d914048b09d00f3322a7ab815b211580e140fab6c1028c23725a2f9d78277.png
+2025-05-12 17:02:33 [INFO]: 开始下载图像: https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/1d8d914048b09d00f3322a7ab815b211580e140fab6c1028c23725a2f9d78277.png 到 /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/generated_1747040553530.png
+2025-05-12 17:02:33 [INFO]: 图像下载完成: /Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/uploads/generated_1747040553530.png
+2025-05-12 17:02:33 [INFO]: 文生图完成，图像已保存到本地，URL: /uploads/generated_1747040553530.png
+2025-05-12 17:02:33 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
   "success": true,
   "functionName": "generate_image",
   "result": {
-    "imageUrl": "/uploads/generated_1746690007027.png",
-    "originalUrl": "https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/c1e8de82a7e79b66c21f96589f69bb2ba34c279d9039e4a580463ce13b340792.png",
-    "prompt": "一只橘猫在草地上打滚，旁边有一些人经过，天空非常晴朗，太阳照在橘猫身上，写实风格",
+    "imageUrl": "/uploads/generated_1747040553530.png",
+    "originalUrl": "https://liblibai-tmp-image.liblib.cloud/img/a377591e97a643f7ba6579070795face/1d8d914048b09d00f3322a7ab815b211580e140fab6c1028c23725a2f9d78277.png",
+    "prompt": "一格漫画：标题 'when you know absolutely nothing about the company but still go the interview' 置于画面最上方，简洁醒目的白色大字。场景为午后阳光下的快餐店'Big Frank’s Hot Dogs'，红黄相间招牌鲜亮，玻璃门贴着'Interview Today'招聘海报。主体是拟人化金色拉布拉多犬穿着合身西装外套，前爪紧张打领带，嘴里叼着整齐文件夹，尾巴僵直抬头深呼吸，踮起后脚准备迈步进入。狗的表情忐忑且自我激励，周围有掩嘴偷笑的路人，店内巨大热狗广告画与主体形成讽刺呼应。画面采用夸张写实漫画风格，饱和暖色调搭配粗线条，突出场景张力与喜剧效果。",
     "modelType": "star3"
   },
   "message": "已根据您的描述生成图片。您可以查看生成的图片。"
 }
-2025-05-08 15:40:07 [INFO]: [DEBUG sendMessage] Detected pre-processed successful image generation from callModelScopeAPI structure.
-2025-05-08 15:40:07 [INFO]: 语言模型处理完成，准备返回响应
-2025-05-08 15:40:07 [INFO]: 语言模型响应成功
+2025-05-12 17:02:33 [INFO]: [DEBUG sendMessage] Detected pre-processed successful image generation from callModelScopeAPI structure.
+2025-05-12 17:02:33 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-12 17:02:33 [INFO]: 语言模型响应成功
+2025-05-12 20:50:48 [INFO]: 收到聊天请求: 两只狗
+2025-05-12 20:50:48 [INFO]: 处理用户消息，消息长度: 3
+2025-05-12 20:50:48 [INFO]: 调用ModelScope API，提示文本长度: 3
+2025-05-12 20:50:48 [INFO]: 使用的API密钥: 9f00...b181
+2025-05-12 20:50:48 [INFO]: 发送ModelScope API请求到: https://api-inference.modelscope.cn/v1/chat/completions
+2025-05-12 20:50:48 [INFO]: 使用模型: Qwen/Qwen3-32B
+2025-05-12 20:50:48 [INFO]: 请求数据: {"model":"Qwen/Qwen3-32B","messages":[{"role":"system","content":"You are \"Image‑Gen Orchestrator\", a tool‑calling expert.  \n\nYour ONLY goals:\n\n1. 洞察用户真实意图，判断信息是否足够生成/编辑图片。  \n2. 如信息不足 → 用一次 ask_user 函数提出所有关键问题。  \n3. 信息足够 → 在一步内调用正确的函数组合，生成或编辑图片。  "},{"role":"user","content":"两只狗"}],"temperature":0.7,"top_p":0.8,"max_tokens":1024,"stream":true,"extra_body":{"enable_thinking":true},"tools":[{"type":"function","function":{"name":"generate_image","description":"根据用户的文本描述生成图片","parameters":{"type":"object","properties":{"prompt":{"type":"string","description":"详细的图像描述，用于生成图片"}},"required":["prompt"]}}},{"type":"function","function":{"name":"day_to_night","description":"将用户提供的白天图片转换为夜景效果图片","parameters":{"type":"object","properties":{"imageUrl":{"type":"string","description":"需要转换的白天图片URL"}},"required":["imageUrl"]}}},{"type":"function","function":{"name":"ask_user","description":"当用户提供的信息不足以生成或编辑图片时，向用户提问并获取更多信息","parameters":{"type":"object","properties":{"questions":{"type":"string","description":"需要向用户提出的问题，用于收集更多信息以完成图片生成或编辑任务"}},"required":["questions"]}}}],"tool_choice":"auto"}
+2025-05-12 20:50:48 [INFO]: 开始发送API请求...
+2025-05-12 20:50:49 [INFO]: ModelScope API流式调用成功
+2025-05-12 20:50:49 [INFO]: 响应状态码: 200
+2025-05-12 20:50:49 [INFO]: 响应头: {"date":"Mon, 12 May 2025 12:50:49 GMT","content-type":"text/event-stream","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["acw_tc=0bcd4cde17470542486047108e692f92d8eb9b0b974cdc5382f39f1c984914;path=/;HttpOnly;Max-Age=1800"],"cache-control":"no-cache","strict-transport-security":"max-age=15724800; includeSubDomains","access-control-allow-origin":"*","access-control-allow-credentials":"true","access-control-allow-methods":"OPTION,HEAD,GET,POST","access-control-allow-headers":"DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization","access-control-max-age":"1728000"}
+2025-05-12 20:50:53 [INFO]: 收到完成标记，流式响应完成
+2025-05-12 20:50:53 [INFO]: 流式响应结束，获得完整内容长度: 0
+2025-05-12 20:50:53 [INFO]: 处理工具调用: {"index":0,"id":"call_6e523afe618741f59cc0eb","type":"function","function":{"name":"ask_user","arguments":"{\"questions\": \"您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？\"}"}}
+2025-05-12 20:50:53 [INFO]: [DEBUG] 准备解析的工具参数字符串 (argsStr): "{"questions": "您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？"}" (长度: 77)
+2025-05-12 20:50:53 [INFO]: 成功解析工具调用参数: {"questions":"您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？"}
+2025-05-12 20:50:53 [INFO]: 执行函数调用: ask_user, 参数: {"questions":"您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？"}
+2025-05-12 20:50:53 [INFO]: 调用ask_user函数，提出问题: 您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？
+2025-05-12 20:50:53 [INFO]: [DEBUG executeFunction ask_user] Returning: {"success":true,"message":"您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？","isQuestion":true}
+2025-05-12 20:50:53 [INFO]: [DEBUG sendMessage] Initial modelResponse from callModelScopeAPI: {
+  "success": true,
+  "message": "您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？",
+  "isQuestion": true
+}
+2025-05-12 20:50:53 [INFO]: [DEBUG sendMessage] Entered 'if (!hasSentToolCallResponse)' block. Current responseText before this block: ''
+2025-05-12 20:50:53 [WARN]: No tool response sent, and no direct choices. Using modelResponse.message: "您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？". ModelResponse was: {"success":true,"message":"您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？","isQuestion":true}
+2025-05-12 20:50:53 [INFO]: 语言模型响应文本 (after !hasSentToolCallResponse block): 您能提供更多关于两只狗的细节吗？比如它们的品种、颜色、动作（例如奔跑、玩耍），以及希望呈现的背景环境（例如公园、家里）？
+2025-05-12 20:50:53 [INFO]: 语言模型处理完成，准备返回响应
+2025-05-12 20:50:53 [INFO]: 语言模型响应成功

@@ -82,3 +82,39 @@
     *   检查 `logs/app.log` 和控制台日志，确认新的逻辑按预期执行，特别是 `[DEBUG sendMessage] Detected pre-processed successful image generation...` 日志是否出现。
 2.  **更新技术文档：**
     *   在 `docs/technical_design.md` 中记录对 `languageModelService.js` 中 `sendMessage` 函数所做的修改及其原因。
+
+### 任务：制定部署计划
+1.  [x] **制定部署计划**：更新 `workplan.md` 文件，列出详细的部署步骤。
+2.  [x] **检查项目配置**：
+    *   [x] 查找 `package.json` 文件 (已找到两个：`client/package.json` 和 `server/package.json`)。
+    *   [x] 查看 `client/package.json` 和 `server/package.json` 文件内容，以了解项目的基本框架和依赖。
+3.  [x] **确认数据库使用情况**：向用户确认项目是否使用了数据库 (已确认：未使用数据库)。
+4.  [ ] **执行部署**：
+    *   [x] **前端部署 (Client - create-react-app)**:
+        *   [x] 使用 `read_deployment_config` 检查客户端部署配置 (`/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/client`) - 需要创建 `netlify.toml` 和 `.gitignore`。
+        *   [x] 创建 `client/netlify.toml` 文件。
+        *   [x] 创建 `client/.gitignore` 文件。
+        *   [x] 使用 `deploy_web_app` 部署客户端应用 (子域名: `my-image-app`, 部署ID: `83dfe80a-76f4-4410-9ee2-f988af7d4f66`, 项目ID: `ca086934-c87d-43ff-9bee-ef52f9f98412`)。
+        *   [x] 使用 `check_deploy_status` 检查客户端部署状态 (已成功，站点待认领: [https://my-image-app.windsurf.build](https://my-image-app.windsurf.build))。
+    *   [ ] **后端部署 (Server - Node.js/Express using Docker)**:
+        *   [x] 检查服务器 (`server/index.js`) 监听的端口 (环境变量 `PORT` 或默认为 `5000`)。
+        *   [x] 在 `server/` 目录下创建 `Dockerfile` (已存在，内容已审核，适用)。
+        *   [x] 在 `server/` 目录下创建 `.dockerignore` 文件。
+        *   [x] 讨论 Docker 镜像仓库和容器托管平台选择 (已选择: Docker Hub 和 Render)。
+        *   [ ] (进行中) 构建 Docker 镜像并推送到 Docker Hub:
+            *   [x] 用户确认 Docker 已安装并提供 Docker Hub 用户名 (`lxm1104`)。
+            *   [x] 构建本地 Docker 镜像 (`docker build --platform linux/amd64 -t lxm1104/my-image-app-server:latest .`)。
+            *   [x] (用户操作) 登录 Docker Hub (`docker login`)。
+            *   [x] 推送 Docker 镜像到 Docker Hub (`docker push lxm1104/my-image-app-server:latest`)。
+        *   [x] 将 Docker 容器部署到 Render (URL: https://my-image-app-server.onrender.com/)。
+5.  [ ] **更新部署状态与后续步骤**：
+    *   [x] 更新前端应用 (`client/netlify.toml`) 的 API 地址，通过 Netlify 代理指向新的 Render 后端 URL。
+    *   [x] 用户将前端代码更改推送到 Git 仓库，Netlify 自动重新部署 (配置调整后已成功)。
+    *   [ ] (进行中) 测试完整的端到端应用流程。
+    *   [ ] (提醒) 用户认领 Netlify 站点。
+
+## 当前状态：
+- 前端项目配置已调整 (`netlify.toml` 移至根目录，Netlify UI Base Directory 设置为 `client`)。
+- 前端应用 (`my-image-app`) 已在 Netlify 上基于新配置成功重新部署。
+- 后端服务 (`my-image-app-server`) 已成功部署到 Render (URL: https://my-image-app-server.onrender.com/)。
+- **下一步**：进行完整的端到端应用功能测试。

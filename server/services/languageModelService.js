@@ -316,12 +316,64 @@ async function callModelScopeAPI(prompt, imageUrl = null, enableFunctions = true
                 logger.info(`成功解析工具调用参数: ${JSON.stringify(functionArgs)}`);
               } catch (parseError) {
                 logger.error(`JSON解析失败，尝试替换特殊字符: ${parseError.message}`);
-                // 尝试将引号内的换行符和其他特殊字符替换为空格
-                const sanitizedStr = argsStr.replace(/"(.*?)"/g, (match) => {
-                  return match.replace(/\n/g, ' ').replace(/\r/g, ' ');
-                });
-                logger.info(`清理后的函数参数字符串: ${sanitizedStr}`);
-                functionArgs = JSON.parse(sanitizedStr);
+                
+                // 检查是否是字符串未终止的问题
+                if (parseError.message.includes('Unterminated string')) {
+                  try {
+                    // 修复未终止的字符串
+                    let fixedStr = argsStr;
+                    
+                    // 检查JSON格式并添加缺失的引号和大括号
+                    if (!fixedStr.endsWith('"}')) {
+                      // 如果不是以"结束，添加缺失的引号
+                      if (!fixedStr.endsWith('"')) {
+                        fixedStr += '"';
+                      }
+                      // 如果不是以}结束，添加缺失的大括号
+                      if (!fixedStr.endsWith('}')) {
+                        fixedStr += '}';
+                      }
+                    }
+                    
+                    logger.info(`修复未终止字符串后: ${fixedStr}`);
+                    functionArgs = JSON.parse(fixedStr);
+                  } catch (fixError) {
+                    logger.error(`修复未终止字符串失败: ${fixError.message}`);
+                    // 如果修复失败，尝试手动提取questions内容
+                    const questionsMatch = argsStr.match(/"questions":\s*"([^"]*)/i);
+                    if (questionsMatch && questionsMatch[1]) {
+                      const questionText = questionsMatch[1].trim();
+                      functionArgs = { questions: questionText };
+                      logger.info(`成功提取questions内容: ${JSON.stringify(functionArgs)}`);
+                    } else {
+                      // 使用默认问题
+                      functionArgs = { questions: "请提供更多关于您需求的细节。" };
+                      logger.info(`无法提取questions，使用默认问题: ${JSON.stringify(functionArgs)}`);
+                    }
+                  }
+                } else {
+                  try {
+                    // 尝试将引号内的换行符和其他特殊字符替换为空格
+                    const sanitizedStr = argsStr.replace(/"(.*?)"/g, (match) => {
+                      return match.replace(/\n/g, ' ').replace(/\r/g, ' ');
+                    });
+                    logger.info(`清理后的函数参数字符串: ${sanitizedStr}`);
+                    functionArgs = JSON.parse(sanitizedStr);
+                  } catch (cleanError) {
+                    logger.error(`清理字符串后解析仍然失败: ${cleanError.message}`);
+                    // 尝试提取questions内容
+                    const questionsMatch = argsStr.match(/"questions":\s*"([^"]*)/i);
+                    if (questionsMatch && questionsMatch[1]) {
+                      const questionText = questionsMatch[1].trim();
+                      functionArgs = { questions: questionText };
+                      logger.info(`备用方式提取questions内容: ${JSON.stringify(functionArgs)}`);
+                    } else {
+                      // 使用默认问题
+                      functionArgs = { questions: "请提供更多关于您需求的细节。" };
+                      logger.info(`无法提取questions，使用默认问题: ${JSON.stringify(functionArgs)}`);
+                    }
+                  }
+                }
               }
             }
             

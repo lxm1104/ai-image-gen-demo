@@ -1,0 +1,29 @@
+# Node.js
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker specific files
+Dockerfile
+.dockerignore
+
+# Environment files (should be passed as runtime env vars)
+.env
+.env.*
+!/.env.example
+
+# Logs
+logs
+*.log
+
+# Uploads directory (if you don't want to include existing uploads in the image)
+# uploads
+
+# Version control
+.git
+.gitignore
+
+# OS specific
+.DS_Store
+Thumbs.db

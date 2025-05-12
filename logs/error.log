@@ -267,3 +267,23 @@
     at IncomingMessage.emit (node:events:519:35)
     at endReadableNT (node:internal/streams/readable:1696:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-08 15:43:37 [ERROR]: 白天转夜景API调用未返回预期数据:
+2025-05-08 15:43:37 [ERROR]: 白天转夜景API调用失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-08 15:43:37 [ERROR]: 函数执行失败: 白天转夜景失败: 白天转夜景API调用未返回预期的图像数据
+2025-05-12 16:33:08 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 62 (line 1 column 63)
+2025-05-12 16:33:08 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 62 (line 1 column 63)
+2025-05-12 16:33:08 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 62 (line 1 column 63)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-12 16:33:36 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 48 (line 1 column 49)
+2025-05-12 16:33:36 [ERROR]: 处理tool_calls时出错: Unterminated string in JSON at position 48 (line 1 column 49)
+2025-05-12 16:33:36 [ERROR]: sendMessage中发生错误: SyntaxError: Unterminated string in JSON at position 48 (line 1 column 49)
+    at JSON.parse (<anonymous>)
+    at IncomingMessage.<anonymous> (/Users/xinmingliu/Documents/MyProjects/gen_agent_test/multi-call-windsurf/server/services/languageModelService.js:324:37)
+    at IncomingMessage.emit (node:events:519:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-05-12 17:01:39 [ERROR]: JSON解析失败，尝试替换特殊字符: Unterminated string in JSON at position 91 (line 1 column 92)
